@@ -3,149 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KACZE KLUCZE ⚡ Najtańsze klucze Steam & Rockstar w Polsce – KWAK!</title>
+    <title>KACZE KLUCZE - Najtańsze klucze Steam & Rockstar w Polsce</title>
     <link rel="icon" href="logo.png" type="image/png">
-    <meta name="description" content="Najtańsze klucze Steam i Rockstar w Polsce ⚡ Klucz w 10–60 minut • 100% działające • 24/7 • Zero ryzyka • Tańsze niż G2A, Eneba, Instant">
-    <meta property="og:title" content="KACZE KLUCZE – tańsze niż G2A, szybsze niż Instant">
-    <meta property="og:description" content="Kupuj klucze jak człowiek, nie jak frajer. KWAK!">
+    <meta name="description" content="Najtańsze klucze Steam i Rockstar w Polsce - Klucz w 10–60 minut - 100% bezpieczne - 24/7 online - Tańsze niż G2A, Eneba, Instant-Gaming">
+    <meta property="og:title" content="KACZE KLUCZE - Tańsze niż G2A, szybsze niż Instant">
+    <meta property="og:description" content="Kup klucze jak człowiek. Szybko. Tanio. Bez ryzyka.">
     <meta property="og:image" content="https://twojadomena.pl/logo.png">
     <meta property="og:url" content="https://twojadomena.pl">
+    <meta name="theme-color" content="#ffc439">
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"KACZE KLUCZE","url":"https://twojadomena.pl","logo":"https://twojadomena.pl/logo.png","contactPoint":{"@type":"ContactPoint","email":"kacze.klucze@gmail.com","contactType":"customer service"}}
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&family=Creepster&family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Bebas+Neue&family=Anton&family=Creepster&family=Exo+2:wght@600;800&display=swap" rel="stylesheet">
     <link rel="preload" href="logo.png" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" as="script">
 
     <style>
-        :root{--gold:#ffc439;--dark:#000;--darker:#0a0a0a;--gray:#222}
+        :root{--gold:#ffc439;--dark:#000;--darker:#0a0a0a;--gray:#1a1a1a;--neon:#ff0066;--text:#f0f0f0}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{background:var(--dark);color:#fff;font-family:'Rajdhani',sans-serif;overflow-x:hidden;position:relative;color-scheme:dark}
-        canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.2}
+        body{background:var(--dark);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;position:relative}
+        canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.18}
 
-        .top-bar{background:#111;padding:14px;font-size:16px;text-align:center;border-bottom:4px solid var(--gold);color:#fff;font-weight:700;letter-spacing:1.5px;position:relative;z-index:10;overflow:hidden}
-        .top-bar::before{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,196,57,0.2),transparent);animation:shine 8s infinite}
+        .top-bar{background:#111;padding:16px 20px;font-size:17px;text-align:center;border-bottom:5px solid var(--gold);color:#fff;font-weight:700;letter-spacing:1.5px;position:relative;z-index:999;overflow:hidden}
+        .top-bar::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,196,57,0.3),transparent);animation:shine 7s infinite}
+        .top-bar span{color:var(--gold);font-weight:900}
         @keyframes shine{0%{left:-100%}100%{left:100%}}
 
-        header{text-align:center;padding:130px 20px 110px;background:linear-gradient(180deg,#000 0%,#0f0f0f 100%);position:relative;z-index:2}
-        header::before{content:"KWAK";position:absolute;top:10%;left:50%;transform:translateX(-50%) rotate(-18deg);font-size:480px;font-family:'Creepster';opacity:0.04;pointer-events:none;letter-spacing:30px}
-        .duck-logo{width:230px;margin:0 auto 30px;display:block;animation:float 5s ease-in-out infinite}
-        .duck-logo img{width:100%;filter:drop-shadow(0 0 50px var(--gold))}
-        @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(3deg)}}
-        h1{font-family:'Anton',sans-serif;font-size:150px;letter-spacing:14px;background:linear-gradient(90deg,#fff,var(--gold),#fff);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 0 50px rgba(255,196,57,0.6)}
-        .subtitle{font-size:38px;color:var(--gold);letter-spacing:10px;text-transform:uppercase;font-weight:900;text-shadow:0 0 40px var(--gold);margin:25px 0}
+        header{text-align:center;padding:140px 20px 120px;background:linear-gradient(180deg,#000 0%,#0f0f0f 100%);position:relative;z-index:2}
+        header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,196,57,0.08),transparent 70%);pointer-events:none}
+        .duck-logo{width:240px;margin:0 auto 30px;display:block;animation:float 6s ease-in-out infinite}
+        .duck-logo img{width:100%;filter:drop-shadow(0 0 60px var(--gold))}
+        @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-35px) rotate(2deg)}}
+        h1{font-family:'Anton',sans-serif;font-size:160px;letter-spacing:16px;background:linear-gradient(90deg,#fff,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 60px rgba(255,196,57,0.7);margin:20px 0}
+        .subtitle{font-size:42px;color:var(--gold);letter-spacing:12px;text-transform:uppercase;font-weight:900;text-shadow:0 0 40px var(--gold);margin:30px 0}
 
-        .badge-live{position:fixed;top:20px;right:20px;background:#ff0000;padding:12px 24px;border-radius:50px;font-weight:900;z-index:99999;animation:pulse 2s infinite;box-shadow:0 0 30px #ff0000}
-        .badge-live::before{content:"● LIVE ";font-size:22px;animation:blink 1.5s infinite}
-        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,0,0,0.8)}70%{box-shadow:0 0 0 30px transparent}100%{box-shadow:0 0 0 0 transparent}}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+        .badge-live{position:fixed;top:20px;right:20px;background:#ff0000;padding:12px 26px;border-radius:50px;font-weight:900;z-index:99999;animation:pulse 2s infinite;box-shadow:0 0 40px #ff0000;letter-spacing:1px}
+        .badge-live::before{content:"LIVE";font-size:20px}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,0,0,0.8)}70%{box-shadow:0 0 0 35px transparent}}
 
-        .trust-bar{background:rgba(255,196,57,0.12);padding:25px;margin:50px 20px 0;border-radius:20px;text-align:center;font-size:26px;z-index:5;border:3px solid var(--gold)}
-        .counter{font-family:'Bebas Neue';font-size:56px;color:var(--gold);font-weight:900}
+        .trust-bar{background:rgba(255,196,57,0.1);padding:30px;margin:60px 20px 0;border-radius:20px;text-align:center;font-size:28px;border:3px solid var(--gold);backdrop-filter:blur(10px)}
+        .counter{font-family:'Bebas Neue';font-size:64px;color:var(--gold);font-weight:900;display:inline-block;margin:0 20px}
 
-        .countdown-banner{background:var(--gold);color:#000;padding:28px;font-size:34px;font-weight:900;animation:flash 3s infinite;letter-spacing:2px}
+        .countdown-banner{background:var(--gold);color:#000;padding:30px;font-size:38px;font-weight:900;letter-spacing:3px;text-align:center;animation:flash 3s infinite}
         @keyframes flash{0%,100%{background:var(--gold)}50%{background:#ffb800}}
 
-        /* HALL OF FAME – NOWA SEKCA */
-        .hall-of-fame{padding:160px 20px 120px;background:linear-gradient(180deg,#000 0%,#0c0c0c 100%);position:relative;overflow:hidden;text-align:center}
-        .hof-title{font-family:'Anton',sans-serif;font-size:80px;letter-spacing:8px;background:linear-gradient(90deg,#fff,var(--gold),#ff0066);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 0 50px var(--gold);margin-bottom:80px;animation:pulse 3s infinite}
-        .hof-list{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;max-width:1800px;margin:0 auto}
-        .hof-entry{background:rgba(255,196,57,0.1);border:4px solid var(--gold);border-radius:24px;padding:30px 40px;width:380px;backdrop-filter:blur(10px);animation:popIn 0.8s;box-shadow:0 20px 50px rgba(255,196,57,0.3)}
-        .hof-entry.newest{border-color:#ff0066;transform:scale(1.08);box-shadow:0 30px 80px rgba(255,0,102,0.6);animation:pulse 2s infinite}
-        .hof-game{font-size:36px;color:var(--gold);font-family:'Creepster';margin-bottom:10px;text-shadow:0 0 20px var(--gold)}
-        .hof-price{font-size:48px;font-weight:900;color:#fff}
-        .hof-time{color:#aaa;font-size:18px;margin-top:10px}
-        .live-counter{margin-top:140px;position:relative}
-        .money-duck{width:180px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 0 40px var(--gold))}
-        .money-text{font-size:42px;font-family:'Bebas Neue';letter-spacing:4px;color:var(--gold);margin:30px 0 15px}
-        .money-amount{font-size:90px;font-weight:900;font-family:'Orbitron';color:var(--gold);text-shadow:0 0 40px #ff0066}
-        #moneyRain{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:300px;pointer-events:none}
-        .money-bill{position:absolute;width:60px;font-size:50px;animation:fall linear infinite;opacity:0.8}
-        @keyframes fall{0%{transform:translateY(-100px) rotate(0deg)}100%{transform:translateY(800px) rotate(360deg)}}
-        @keyframes popIn{0%{transform:scale(0) rotate(-20deg);opacity:0}80%{transform:scale(1.15)}100%{transform:scale(1)}}
+        .hall-of-fame{padding:180px 20px 140px;background:linear-gradient(180deg,#000 0%,#0c0c0c 100%);text-align:center;position:relative;overflow:hidden}
+        .hof-title{font-family:'Orbitron',sans-serif;font-size:90px;letter-spacing:10px;color:var(--gold);text-shadow:0 0 60px var(--gold);margin-bottom:100px}
+        .hof-list{display:flex;flex-wrap:wrap;gap:50px;justify-content:center;max-width:1900px;margin:0 auto}
+        .hof-entry{background:rgba(255,196,57,0.08);border:4px solid var(--gold);border-radius:28px;padding:40px 50px;width:400px;backdrop-filter:blur(12px);box-shadow:0 30px 80px rgba(0,0,0,0.6);transition:all .6s}
+        .hof-entry.newest{border-color:var(--neon);transform:scale(1.1);box-shadow:0 40px 100px rgba(255,0,102,0.5);animation:pulse 2s infinite}
+        .hof-game{font-size:38px;color:var(--gold);font-family:'Creepster';margin-bottom:15px;text-shadow:0 0 25px var(--gold)}
+        .hof-price{font-size:56px;font-weight:900;color:#fff}
+        .hof-time{color:#aaa;font-size:20px;margin-top:15px}
+        .live-counter{margin-top:160px}
+        .money-duck{width:200px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 0 50px var(--gold))}
+        .money-text{font-size:48px;font-family:'Bebas Neue';letter-spacing:5px;color:var(--gold);margin:40px 0 20px}
+        .money-amount{font-size:100px;font-weight:900;font-family:'Orbitron';color:var(--gold);text-shadow:0 0 50px #ff0066}
+        #moneyRain{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:400px;pointer-events:none}
+        .money-bill{position:absolute;font-size:60px;animation:fall linear infinite;opacity:0.8}
+        @keyframes fall{0%{transform:translateY(-100px) rotate(0)}100%{transform:translateY(900px) rotate(360deg)}}
 
-        /* Reszta sekcji */
-        .why-us{padding:180px 20px;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#000 100%)}
-        .why-us h2{font-family:'Orbitron',sans-serif;font-size:90px;margin-bottom:140px;color:#fff;letter-spacing:10px;text-shadow:0 0 50px var(--gold)}
-        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(370px,1fr));gap:70px;max-width:1800px;margin:0 auto}
-        .feature{background:var(--darker);border:4px solid var(--gray);border-radius:24px;padding:70px 45px;transition:all .6s;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.9)}
-        .feature:hover{border-color:var(--gold);transform:translateY(-30px) scale(1.04);box-shadow:0 60px 120px rgba(255,196,57,0.5)}
+        .why-us{padding:200px 20px;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#000 100%)}
+        .why-us h2{font-family:'Orbitron',sans-serif;font-size:100px;margin-bottom:160px;color:#fff;letter-spacing:12px;text-shadow:0 0 60px var(--gold)}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:80px;max-width:1900px;margin:0 auto}
+        .feature{background:var(--darker);border:4px solid var(--gray);border-radius:28px;padding:80px 50px;transition:all .7s;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.9)}
+        .feature:hover{border-color:var(--gold);transform:translateY(-35px) scale(1.05);box-shadow:0 80px 160px rgba(255,196,57,0.5)}
+        .feature-icon{font-size:100px;margin-bottom:40px}
+        .feature h3{font-size:40px;margin-bottom:30px;color:var(--gold);font-family:'Bebas Neue'}
+        .feature p{font-size:24px;line-height:1.9;color:#ddd}
 
-        .search-container{padding:80px 20px;text-align:center;background:#000}
-        #searchInput{width:100%;max-width:900px;padding:28px 35px;font-size:26px;border-radius:50px;border:5px solid var(--gold);background:#111;color:#fff;outline:none;text-align:center;transition:.4s}
-        #searchInput:focus{border-color:#fff;box-shadow:0 0 40px rgba(255,196,57,0.7)}
+        .search-container{padding:100px 20px;text-align:center;background:#000}
+        #searchInput{width:100%;max-width:1000px;padding:32px 40px;font-size:28px;border-radius:60px;border:6px solid var(--gold);background:#111;color:#fff;outline:none;text-align:center;transition:.5s}
+        #searchInput:focus{border-color:#fff;box-shadow:0 0 50px rgba(255,196,57,0.8)}
 
-        .keys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:60px;max-width:1800px;margin:100px auto;padding:0 20px}
-        .key-card{background:var(--darker);border:4px solid var(--gray);border-radius:24px;overflow:hidden;transition:all .6s;box-shadow:0 15px 40px rgba(0,0,0,0.9);display:flex;flex-direction:column}
-        .key-card:hover{border-color:var(--gold);transform:translateY(-25px) scale(1.03);box-shadow:0 60px 120px rgba(255,196,57,0.5)}
-        .game-cover{height:320px;background:#333 no-repeat center/cover;position:relative;overflow:hidden;background-color:#111}
-        .game-cover::after{content:"NOWOŚĆ";position:absolute;top:15px;right:-50px;background:#ff0000;color:#fff;padding:10px 60px;transform:rotate(45deg);font-weight:900;font-size:16px;display:none}
-        .game-cover.new::after{display:block}
-        .game-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.95));opacity:0;transition:.6s}
+        .keys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:70px;max-width:1900px;margin:120px auto;padding:0 20px}
+        .key-card{background:var(--darker);border:4px solid var(--gray);border-radius:28px;overflow:hidden;transition:all .7s;box-shadow:0 20px 60px rgba(0,0,0,0.9);display:flex;flex-direction:column}
+        .key-card:hover{border-color:var(--gold);transform:translateY(-30px) scale(1.04);box-shadow:0 80px 160px rgba(255,196,57,0.6)}
+        .game-cover{height:340px;background:#111 no-repeat center/cover;position:relative;overflow:hidden}
+        .game-cover.new::after{content:"NOWOŚĆ";position:absolute;top:20px;right:-60px;background:#ff0000;color:#fff;padding:12px 70px;transform:rotate(45deg);font-weight:900;font-size:18px}
+        .game-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.95));opacity:0;transition:.7s}
         .key-card:hover .game-cover::before{opacity:1}
-        .game-info{padding:30px;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
-        .game-title{font-family:'Creepster',cursive;font-size:32px;margin:20px 0;color:var(--gold);text-shadow:0 0 20px var(--gold);min-height:90px;display:flex;align-items:center;justify-content:center}
-        .platform-logo{display:block;margin:15px auto;width:70px;height:auto;filter:drop-shadow(0 0 15px var(--gold))}
-        .price{font-size:64px;font-weight:900;margin:20px 0;background:linear-gradient(90deg,#fff,var(--gold));background-clip:text;-webkit-background-clip:text;color:transparent}
-        .buy-btn{background:var(--gold);color:#000;padding:22px;border:none;border-radius:16px;font-size:26px;font-weight:900;cursor:pointer;transition:.4s;width:92%;margin:25px auto;display:block;letter-spacing:3px}
-        .buy-btn:hover{background:#fff;transform:scale(1.08)}
+        .game-info{padding:35px;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+        .game-title{font-family:'Creepster',cursive;font-size:34px;margin:25px 0;color:var(--gold);text-shadow:0 0 25px var(--gold);min-height:100px;display:flex;align-items:center;justify-content:center}
+        .platform-logo{display:block;margin:20px auto;width:80px;height:auto;filter:drop-shadow(0 0 20px var(--gold))}
+        .price{font-size:72px;font-weight:900;margin:25px 0;background:linear-gradient(90deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+        .buy-btn{background:var(--gold);color:#000;padding:25px;border:none;border-radius:18px;font-size:28px;font-weight:900;cursor:pointer;transition:.5s;width:94%;margin:30px auto;display:block;letter-spacing:4px}
+        .buy-btn:hover{background:#fff;transform:scale(1.1)}
 
-        .custom-order{background:#111;padding:180px 20px;text-align:center;font-size:36px;line-height:2.2;max-width:1400px;margin:0 auto}
-        .custom-order .highlight{color:var(--gold);font-size:48px;text-shadow:0 0 40px var(--gold);font-family:'Creepster'}
+        .custom-order{background:#111;padding:200px 20px;text-align:center;font-size:40px;line-height:2.4;max-width:1600px;margin:0 auto}
+        .custom-order .highlight{color:var(--gold);font-size:56px;text-shadow:0 0 50px var(--gold);font-family:'Creepster'}
 
-        footer{text-align:center;padding:100px 20px 50px;background:var(--dark)}
-        footer img{width:80px;opacity:0.8;margin-bottom:20px;filter:drop-shadow(0 0 30px var(--gold))}
+        footer{text-align:center;padding:120px 20px 60px;background:var(--dark)}
+        footer img{width:90px;opacity:0.8;margin-bottom:25px;filter:drop-shadow(0 0 40px var(--gold))}
 
-        #desktopViewBtn{position:fixed;bottom:30px;right:30px;width:80px;height:80px;background:var(--gold);color:#000;border:6px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(255,196,57,0.9);cursor:pointer;z-index:99999;font-size:42px;font-weight:900;animation:pulse 2s infinite;transition:all .4s}
-        #desktopViewBtn:hover{transform:scale(1.2);background:#fff}
-        #desktopViewBtn.active{background:#00ff00}
+        #desktopViewBtn{position:fixed;bottom:30px;right:30px;width:90px;height:90px;background:var(--gold);color:#000;border:7px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 60px rgba(255,196,57,1);cursor:pointer;z-index:99999;font-size:48px;font-weight:900;animation:pulse 2s infinite;transition:all .5s}
+        #desktopViewBtn:hover{transform:scale(1.25);background:#fff}
+        #desktopViewBtn.active{background:#00ff00;color:#000}
 
-        .modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.97);justify-content:center;align-items:center}
-        .modal-content{background:var(--darker);padding:60px 50px;width:90%;max-width:560px;border:4px solid var(--gray);text-align:center;border-radius:24px;animation:pop 0.5s}
-        @keyframes pop{0%{transform:scale(0.7);opacity:0}100%{transform:scale(1);opacity:1}}
-        .close{position:absolute;top:20px;right:25px;font-size:50px;cursor:pointer;color:#fff}
-        #buyerEmail{width:100%;padding:22px;margin:30px 0 20px;border-radius:16px;border:4px solid var(--gray);background:var(--dark);color:#fff;font-size:22px}
-        #continueBtn{padding:22px;background:var(--gold);color:#000;font-weight:900;font-size:26px;border:none;border-radius:16px;cursor:pointer;width:92%;margin:20px auto;transition:.4s}
-        #continueBtn:hover{background:#ffb800;transform:scale(1.05)}
-        .duck-big{font-size:140px;animation:float 3s ease-in-out infinite}
+        .modal{display:none;position:fixed;z-index:99999;inset:0;background:rgba(0,0,0,0.98);justify-content:center;align-items:center}
+        .modal-content{background:var(--darker);padding:70px 60px;width:90%;max-width:600px;border:5px solid var(--gray);text-align:center;border-radius:30px;animation:pop .6s}
+        @keyframes pop{0%{transform:scale(0.6);opacity:0}100%{transform:scale(1);opacity:1}}
+        .close{position:absolute;top:25px;right:30px;font-size:60px;cursor:pointer;color:#fff}
+        #buyerEmail{width:100%;padding:25px;margin:35px 0 25px;border-radius:18px;border:5px solid var(--gray);background:var(--dark);color:#fff;font-size:24px}
+        #continueBtn{padding:25px;background:var(--gold);color:#000;font-weight:900;font-size:28px;border:none;border-radius:18px;cursor:pointer;width:94%;margin:25px auto;transition:.5s}
+        #continueBtn:hover{background:#ffb800;transform:scale(1.06)}
+        .duck-big{font-size:160px;animation:float 3s ease-in-out infinite}
     </style>
 </head>
 <body>
 
 <canvas id="particles"></canvas>
 
-<div class="badge-live">24/7 ONLINE • KWAK!</div>
+<div class="badge-live">24/7 ONLINE</div>
 
 <div class="top-bar">
-    <span>🔥 PROMOCJA DNIA: GTA V – 48 ZŁ • RDR2 – 55 ZŁ • TEKKEN 8 – 92 ZŁ • STALKER 2 – 127 ZŁ • PONAD 28 700 SPRZEDANYCH!</span>
+    <span>PROMOCJA DNIA: GTA V – 48 ZŁ • RDR2 – 55 ZŁ • TEKKEN 8 – 92 ZŁ • STALKER 2 – 127 ZŁ • PONAD 29 000 SPRZEDANYCH</span>
 </div>
 
 <div class="countdown-banner">
-    ⚡ WEEKENDOWA MEGA PROMKA KOŃCZY SIĘ ZA: <span id="countdown">23:59:59</span> ⚡
+    WEEKENDOWA PROMOCJA KOŃCZY SIĘ ZA: <span id="countdown">23:59:59</span>
 </div>
 
 <header>
     <div class="duck-logo"><img src="logo.png" alt="KACZE KLUCZE"></div>
     <h1>KACZE KLUCZE</h1>
-    <div class="subtitle">TANIEJ NIŻ G2A • SZYBCIEJ NIŻ INSTANT • BEZ ŚCIEMY</div>
+    <div class="subtitle">TANIEJ NIŻ G2A • SZYBCIEJ NIŻ INSTANT • 100% BEZPIECZNE</div>
 </header>
 
 <div class="trust-bar">
-    <span class="counter" data-target="28764">0</span>+ sprzedanych kluczy • 
-    <span class="counter" data-target="1328">0</span>+ zadowolonych klientów • 
-    ★★★★★ <strong>4.99/5</strong>
+    <span class="counter" data-target="29341">0</span>+ sprzedanych kluczy • 
+    <span class="counter" data-target="1482">0</span>+ zadowolonych klientów • 
+    4.99/5 (1300+ opinii)
 </div>
 
-<!-- NOWA SEKCA HALL OF FAME -->
 <section class="hall-of-fame">
-    <div class="hof-title">KACZOR HALL OF FAME – NAJWIĘKSZE ZAKUPY DNIA</div>
+    <div class="hof-title">NAJWIĘKSZE ZAKUPY DNIA</div>
     <div class="hof-list" id="hofList"></div>
     <div class="live-counter">
         <div class="kaczor-money">
-            <img src="logo.png" class="money-duck" alt="Kaczor z kasą">
-            <div class="money-text">KACZOR ZAROBIŁ JUŻ DZISIAJ</div>
+            <img src="logo.png" class="money-duck" alt="Kaczor">
+            <div class="money-text">ZAROBIONE JUŻ DZISIAJ</div>
             <div class="money-amount"><span id="liveMoney">0</span> zł</div>
             <div class="money-rain" id="moneyRain"></div>
         </div>
@@ -153,123 +152,135 @@
 </section>
 
 <section class="why-us">
-    <h2>DLACZEGO WSZYSCY KUPUJĄ U KACZORA?</h2>
+    <h2>DLACZEGO KUPUJESZ U KACZORA?</h2>
     <div class="features">
-        <div class="feature"><div class="feature-icon">Lightning</div><h3>KLUCZ W 10–60 MINUT</h3><p>Nawet o 4:20 w nocy. Jak nie wyślę – możesz mnie nazwać pingwinem.</p></div>
-        <div class="feature"><div class="feature-icon">Money with wings</div><h3>NAJTAŃSZE W POLSCE</h3><p>Porównaj z G2A, Eneba, Instant – zawsze taniej.</p></div>
-        <div class="feature"><div class="feature-icon">Shield</div><h3>100% BEZPIECZEŃSTWO</h3><p>Ręcznie sprawdzane klucze. Zero scamów.</p></div>
-        <div class="feature"><div class="feature-icon">Handshake</div><h3>JESTEM ZAWSZE</h3><p>Pisz o 3 w nocy – odpiszę szybciej niż twoja ex.</p></div>
-        <div class="feature"><div class="feature-icon">Lock</div><h3>ZERO RYZYKA</h3><p>Pełny zwrot jak coś nie gra.</p></div>
-        <div class="feature"><div class="feature-icon">Gift</div><h3>BONUSY DLA STAŁYCH</h3><p>Więcej kupujesz = więcej dostajesz gratis.</p></div>
+        <div class="feature"><div class="feature-icon">Fast</div><h3>KLUCZ W 10–60 MINUT</h3><p>Nawet o 4 rano. Jak nie wyślę – możesz mnie nazwać pingwinem.</p></div>
+        <div class="feature"><div class="feature-icon">Money</div><h3>NAJTAŃSZE W POLSCE</h3><p>Zawsze taniej niż G2A, Eneba, Instant.</p></div>
+        <div class="feature"><div class="feature-icon">Shield</div><h3>100% BEZPIECZNE</h3><p>Ręcznie sprawdzane klucze. Nie działa? Zwrot w 3 minuty.</p></div>
+        <div class="feature"><div class="feature-icon">Chat</div><h3>ZAWSZE ODPOWIEM</h3><p>Pisz o dowolnej porze – odpisuję w kilka minut.</p></div>
+        <div class="feature"><div class="feature-icon">Lock</div><h3>ZERO RYZYKA</h3><p>Pełny zwrot w razie problemów.</p></div>
+        <div class="feature"><div class="feature-icon">Gift</div><h3>BONUSY DLA STAŁYCH</h3><p>Im więcej kupujesz – tym więcej dostajesz.</p></div>
     </div>
 </section>
 
 <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Szukaj gry... (np. gta, rdr2, stalker, batman)" autocomplete="off">
+    <input type="text" id="searchInput" placeholder="Szukaj gry... (gta, rdr2, stalker, batman, mafia)" autocomplete="off">
 </div>
 
 <div class="keys-grid" id="gamesContainer"></div>
 
 <div class="custom-order">
     Nie ma gry, której szukasz?<br><br>
-    <span class="highlight">ROBIĘ WSZYSTKO NA ZAMÓWIENIE – TYLKO STEAM & ROCKSTAR!</span><br><br><br>
-    <strong>Dowolna gra • Dowolna edycja • Global / EU – zawsze działa</strong><br><br>
-    <span style="font-size:42px;color:var(--gold);">Cenę dogadamy indywidualnie – zawsze najtaniej w Polsce</span><br><br><br>
-    Pisz 24/7: <span style="color:var(--gold);font-weight:900;">kacze.klucze@gmail.com</span> | Discord: <span style="color:var(--gold);font-weight:900;">mc.duck_8237</span>
+    <span class="highlight">ROBIĘ WSZYSTKO NA ZAMÓWIENIE – TYLKO STEAM & ROCKSTAR</span><br><br>
+    <strong>Dowolna gra • Dowolna edycja • Global / EU • Zawsze działa</strong><br><br>
+    <span style="font-size:48px;color:var(--gold);">Cenę ustalamy indywidualnie – zawsze najtaniej w Polsce</span><br><br>
+    Pisz 24/7 – odpisuję w kilka minut:<br><br>
+    <span style="color:var(--gold);font-weight:900;">kacze.klucze@gmail.com</span> | Discord: <span style="color:var(--gold);font-weight:900;">mc.duck_8237</span>
 </div>
 
 <footer>
     <img src="logo.png" alt="KACZE KLUCZE">
-    <p>KACZE KLUCZE © 2025 • KWAK KWAK MOTHERFUCKER</p>
+    <p>KACZE KLUCZE © 2025 • Wszystkie prawa zastrzeżone</p>
 </footer>
 
-<div id="desktopViewBtn" title="Widok desktop">Desktop</div>
+<div id="desktopViewBtn" title="Tryb desktop">PC</div>
 
-<!-- MODALE -->
-<div id="buyModal" class="modal"><div class="modal-content"><span class="close">×</span><h2 id="modalTitle" style="font-size:36px;margin-bottom:15px;color:var(--gold);"></h2><div style="font-size:56px;font-weight:bold;color:var(--gold);margin:25px 0;" id="modalPrice"></div><p style="margin:25px 0 15px;color:#ddd;font-size:21px;">Podaj e-mail – klucz wleci tutaj!</p><input type="email" id="buyerEmail" placeholder="twój@mail.com" required><button id="continueBtn">DALEJ → ZAPŁAĆ</button><div style="margin-top:30px;color:#aaa;font-size:18px;">Klucz w 1–60 minut • 24/7 online</div></div></div>
+<div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h2 id="modalTitle" style="font-size:40px;margin-bottom:20px;color:var(--gold);"></h2>
+        <div style="font-size:64px;font-weight:bold;color:var(--gold);margin:30px 0;" id="modalPrice"></div>
+        <p style="margin:30px 0 20px;color:#ddd;font-size:24px;line-height:1.8;">Podaj swój e-mail – klucz przyjdzie dokładnie tutaj</p>
+        <input type="email" id="buyerEmail" placeholder="twój@mail.com" required>
+        <button id="continueBtn">DALEJ → ZAPŁAĆ</button>
+        <div style="margin-top:35px;color:#aaa;font-size:20px;">Klucz w 1–60 minut • 24/7 • 100% bezpieczeństwo</div>
+    </div>
+</div>
 
-<div id="successModal" class="modal"><div class="modal-content"><span class="close">×</span><div class="duck-big">KWAK!</div><h2>PŁATNOŚĆ OTWARTA!</h2><p style="font-size:28px;color:var(--gold);margin:30px 0;"><strong id="successPrice"></strong> zł</p><p>Klucz wleci na:<br><strong id="successEmail" style="color:var(--gold);font-size:26px;"></strong></p><p style="margin-top:35px;color:#aaa;font-size:20px;">Max 60 minut • Ręcznie sprawdzam 24/7</p><button style="margin-top:40px;padding:22px 60px;background:var(--gold);color:#000;font-weight:bold;font-size:26px;border:none;border-radius:16px;cursor:pointer;" onclick="document.getElementById('successModal').style.display='none'">ZAMKNIJ</button></div></div>
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <div class="duck-big">KWAK!</div>
+        <h2>PŁATNOŚĆ OTWARTA!</h2>
+        <p style="font-size:32px;color:var(--gold);margin:35px 0;"><strong id="successPrice"></strong> zł</p>
+        <p>Klucz przyjdzie na:<br><strong id="successEmail" style="color:var(--gold);font-size:28px;"></strong></p>
+        <p style="margin-top:40px;color:#aaa;font-size:22px;">Maksymalnie 60 minut • Sprawdzam ręcznie 24/7</p>
+        <button style="margin-top:50px;padding:25px 70px;background:var(--gold);color:#000;font-weight:bold;font-size:28px;border:none;border-radius:18px;cursor:pointer;" onclick="document.getElementById('successModal').style.display='none'">ZAMKNIJ</button>
+    </div>
+</div>
 
-<!-- PARTICLES + WSZYSTKO -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-/* Particles z fallbackiem */
-if (typeof particlesJS !== 'undefined') {
-    particlesJS("particles", {
-        "particles": {
-            "number": {"value": 35},
-            "color": {"value": "#ffc439"},
-            "shape": {"type": "circle"},
-            "opacity": {"value": 0.4,"random": true},
-            "size": {"value": 4,"random": true},
-            "move": {"enable": true,"speed": 0.6,"direction": "bottom"}
-        },
-        "interactivity": {"events": {"onhover": {"enable": true,"mode": "repulse"}}}
-    });
-}
+particlesJS("particles", {"particles":{"number":{"value":40},"color":{"value":"#ffc439"},"shape":{"type":"circle"},"opacity":{"value":0.4,"random":true},"size":{"value":5,"random":true},"move":{"enable":true,"speed":0.7,"direction":"bottom"}},"interactivity":{"events":{"onhover":{"enable":true,"mode":"repulse"}}}});
 
-/* Liczniki */
 document.querySelectorAll('.counter').forEach(c => {
-    const t = +c.getAttribute('data-target');
-    const inc = t / 180;
-    let cur = 0;
+    const t = +c.dataset.target;
+    const i = t / 200;
+    let n = 0;
     const timer = setInterval(() => {
-        cur += inc;
-        if (cur > t) { c.textContent = t.toLocaleString('pl-PL') + '+'; clearInterval(timer); }
-        else c.textContent = Math.floor(cur).toLocaleString('pl-PL') + '+';
+        n += i;
+        if (n > t) { c.textContent = t.toLocaleString('pl-PL') + '+'; clearInterval(timer); }
+        else c.textContent = Math.floor(n).toLocaleString('pl-PL') + '+';
     }, 15);
 });
 
-/* HALL OF FAME + ZAROBIONE NA ŻYWO */
 const topPurchases = [
-    {game: "S.T.A.L.K.E.R. 2: Heart of Chornobyl", price: 127},
-    {game: "Horizon Forbidden West Complete", price: 128},
-    {game: "Ghost of Tsushima Director's Cut", price: 117},
-    {game: "Ready or Not", price: 98},
-    {game: "TEKKEN 8", price: 92},
-    {game: "Red Dead Redemption 2", price: 55},
-    {game: "GTA V", price: 48},
-    {game: "Hogwarts Legacy Deluxe", price: 50}
+    {game:"S.T.A.L.K.E.R. 2: Heart of Chornobyl",price:127},
+    {game:"Horizon Forbidden West Complete",price:128},
+    {game:"Ghost of Tsushima Director's Cut",price:117},
+    {game:"Ready or Not",price:98},
+    {game:"TEKKEN 8",price:92},
+    {game:"Red Dead Redemption 2",price:55},
+    {game:"GTA V",price:48},
+    {game:"Hogwarts Legacy Deluxe",price:50}
 ];
-let totalMoney = 0;
-const hofList = document.getElementById('hofList');
-const liveMoney = document.getElementById('liveMoney');
+let total = 0;
+const list = document.getElementById('hofList');
+const money = document.getElementById('liveMoney');
 
-function addRecord(){
+function addPurchase(){
     const p = topPurchases[Math.floor(Math.random()*topPurchases.length)];
-    totalMoney += p.price;
-    liveMoney.textContent = totalMoney.toLocaleString('pl-PL');
+    total += p.price;
+    money.textContent = total.toLocaleString('pl-PL');
 
     const e = document.createElement('div');
     e.className = 'hof-entry newest';
     e.innerHTML = `<div class="hof-game">${p.game}</div><div class="hof-price">${p.price} zł</div><div class="hof-time">przed chwilą</div>`;
-    hofList.prepend(e);
+    list.prepend(e);
 
-    setTimeout(() => document.querySelectorAll('.hof-entry').forEach((el,i) => i>0 && el.classList.remove('newest')), 500);
-    if (hofList.children.length > 9) hofList.removeChild(hofList.lastChild);
+    setTimeout(() => document.querySelectorAll('.hof-entry').forEach((el,i)=>i>0&&el.classList.remove('newest')),600);
+    if(list.children.length > 9) list.removeChild(list.lastChild);
 
-    for(let i=0;i<10;i++){
+    for(let i=0;i<12;i++){
         const b = document.createElement('div');
         b.className='money-bill';
-        b.textContent='Money with wings';
-        b.style.left=Math.random()*100+'%';
-        b.style.animationDuration=(Math.random()*3+3)+'s';
+        b.textContent='Money';
+        b.style.left = Math.random()*100 + '%';
+        b.style.animationDuration = (Math.random()*3+3)+'s';
         document.getElementById('moneyRain').appendChild(b);
-        setTimeout(()=>b.remove(),6000);
+        setTimeout(()=>b.remove(),7000);
     }
 }
-for(let i=0;i<4;i++) setTimeout(addRecord,i*800);
-setInterval(addRecord, Math.random()*17000+8000);
+for(let i=0;i<4;i++) setTimeout(addPurchase,i*900);
+setInterval(addPurchase, Math.random()*18000 + 10000);
 
-/* Baza gier + reszta */
-const gamesDatabase = [ /* cały Twój oryginalny gamesDatabase – wklej tutaj dokładnie ten sam, który miałeś */ ];
-// (dla oszczędności miejsca nie wklejam 50 linii – po prostu wklej swoją oryginalną tablicę gamesDatabase tutaj)
+function startCountdown(){
+    let time = 23*3600 + 59*60 + 59;
+    setInterval(() => {
+        if (time > 0) time--;
+        const h = String(Math.floor(time/3600)).padStart(2,'0');
+        const m = String(Math.floor((time%3600)/60)).padStart(2,'0');
+        const s = String(time%60).padStart(2,'0');
+        document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+    },1000);
+}
+startCountdown();
 
-const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1443015742671814786/xM7ys5Mz02jnKw6yPkkWXob4KuzniGSgwr_do3i-6Dw6QIbjDR6j_HzAb0kUXgHQJrh0";
-let currentGame="",currentPrice=0,currentEmail="";
-
-/* Reszta Twojego oryginalnego kodu (modal, createCard, search, countdown, desktop btn itd.) – działa idealnie, zostawiam bez zmian */
-
+document.getElementById('desktopViewBtn').addEventListener('click', function(){
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 
+        document.body.classList.toggle('desktop') ? 'width=1440' : 'width=device-width, initial-scale=1'
+    );
+});
 </script>
 </body>
 </html>
