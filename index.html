@@ -8,7 +8,7 @@
     <meta name="description" content="Najtańsze klucze Steam i Rockstar w Polsce ⚡ Klucz w 10–60 minut • 100% działające • 24/7 online • Zero ryzyka">
     <meta property="og:title" content="KACZE KLUCZE – tańsze niż G2A, szybsze niż Instant">
     <meta property="og:description" content="Kupuj klucze jak człowiek, nie jak frajer. KWAK!">
-    <meta property="og:image" content="https://twojadomena.pl/logo.png">
+    <meta property="og:image" content="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&family=Creepster&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -27,13 +27,15 @@
         .duck-logo{width:200px;margin:0 auto 30px;display:block;animation:float 4s ease-in-out infinite}
         .duck-logo img{width:100%;filter:drop-shadow(0 0 30px var(--gold))}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-        h1{font-family:'Bebas Neue',sans-serif;font-size:120px;letter-spacing:10px;color:#fff;text-transform:uppercase;margin:10px 0;background:linear-gradient(90deg,#fff,var(--gold),#fff);background-clip:text;-webkit-background-clip:text;color:transparent}
+        h1{font-family:'Bebas Neue',sans-serif;font-size:120px;letter-spacing:10px;color:#fff;text-transform:uppercase;margin:10px 0;background:linear-gradient(90deg,#fff,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
         .subtitle{font-size:32px;color:var(--gold);letter-spacing:8px;text-transform:uppercase;font-weight:900;text-shadow:0 0 20px var(--gold)}
         .badge-live{position:fixed;top:20px;right:20px;background:#ff0000;padding:8px 16px;border-radius:50px;font-weight:900;z-index:99999;animation:pulse 2s infinite;box-shadow:0 0 20px #ff0000}
         .badge-live::before{content:"● ";font-size:18px}
-        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,0,0,0.8)}70%{box-shadow:0 0 0 25px transparent}100%{box-shadow:0 0 0 0 transparent}}
+        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,0,0,0.8)}70%{box-shadow:0 0 0 20px transparent}100%{box-shadow:0 0 0 0 transparent}}
         
-        /* Sekcje */
+        .countdown-banner{background:var(--gold);color:#000;padding:20px;text-align:center;font-size:28px;font-weight:900;animation:flash 3s infinite}
+        @keyframes flash{0%,100%{background:var(--gold)}50%{background:#ffb800}}
+        
         .why-us{padding:140px 20px;text-align:center;background:linear-gradient(180deg,#0f0f0f 0%,#000 100%)}
         .why-us h2{font-family:'Orbitron',sans-serif;font-size:70px;margin-bottom:100px;color:#fff;letter-spacing:6px;text-shadow:0 0 30px var(--gold)}
         .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:50px;max-width:1600px;margin:0 auto}
@@ -45,79 +47,62 @@
         .feature h3{font-size:32px;margin-bottom:20px;color:var(--gold);font-family:'Bebas Neue'}
         .feature p{font-size:20px;line-height:1.7;color:#ddd}
         
-        /* Gry */
+        .reviews-slider{background:#111;padding:100px 20px;overflow:hidden;position:relative}
+        .reviews-slider::before{content:"💬 OPINIE KLIENTÓW 💬";position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:40px;color:var(--gold);font-family:'Creepster';text-shadow:0 0 20px var(--gold)}
+        .review-track{white-space:nowrap;animation:scroll 45s linear infinite;display:inline-block}
+        .review{width:420px;display:inline-block;margin:0 30px;background:var(--darker);padding:35px;border-radius:20px;border:2px solid var(--gray);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+        .review p{font-size:21px;line-height:1.8;margin-bottom:25px;font-style:italic}
+        .review-author{color:var(--gold);font-weight:900;font-size:22px}
+        @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        
         .search-container{padding:60px 20px;text-align:center;background:#000}
         #searchInput{width:100%;max-width:800px;padding:22px 30px;font-size:22px;border-radius:50px;border:4px solid var(--gold);background:#111;color:#fff;outline:none;text-align:center;transition:.3s}
-        #searchInput:focus{border-color:#fff;box-shadow:0 0 30px rgba(255,196,57,0.5)}
+        #searchInput:focus{border-color:#fff;box-shadow:0 0 30px rgba(255,196,57,0.6)}
+        
         .keys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;max-width:1600px;margin:80px auto;padding:0 20px}
-        .key-card{background:var(--darker);border:3px solid var(--gray);border-radius:20px;overflow:hidden;transition:all .5s;box-shadow:0 10px 30px rgba(0,0,0,0.8);display:flex;flex-direction:column}
+        .key-card{background:var(--darker);border:3px solid var(--gray);border-radius:20px;overflow:hidden;transition:all .5s;box-shadow:0 10px 30px rgba(0,0,0,0.8);position:relative}
         .key-card:hover{border-color:var(--gold);transform:translateY(-15px);box-shadow:0 40px 80px rgba(255,196,57,0.4)}
         .game-cover{height:300px;background:#333 no-repeat center/cover;position:relative;overflow:hidden}
         .game-cover::after{content:"NOWOŚĆ";position:absolute;top:15px;right:-40px;background:#ff0000;color:#fff;padding:8px 50px;transform:rotate(45deg);font-weight:900;font-size:14px;display:none}
         .game-cover.new::after{display:block}
         .game-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.9));opacity:0;transition:.5s}
         .key-card:hover .game-cover::before{opacity:1}
-        .game-info{padding:25px;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+        .game-info{padding:25px;text-align:center}
         .game-title{font-family:'Creepster',cursive;font-size:28px;margin:15px 0;color:var(--gold);text-shadow:0 0 15px var(--gold);min-height:80px;display:flex;align-items:center;justify-content:center}
-        .platform-logo{display:block;margin:10px auto;width:60px;height:auto}
-        .price{font-size:56px;font-weight:900;margin:15px 0;background:linear-gradient(90deg,#fff,var(--gold));background-clip:text;-webkit-background-clip:text;color:transparent}
+        .platform-logo{display:block;margin:10px auto;width:60px}
+        .price{font-size:56px;font-weight:900;margin:15px 0;background:linear-gradient(90deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
         .old-price{font-size:24px;text-decoration:line-through;color:#666;margin-left:10px}
         .buy-btn{background:var(--gold);color:#000;padding:18px;border:none;border-radius:12px;font-size:22px;font-weight:900;cursor:pointer;transition:.3s;width:90%;margin:20px auto;display:block;letter-spacing:2px}
         .buy-btn:hover{background:#fff;transform:scale(1.05)}
-        .sold-out{filter:grayscale(1);opacity:0.6}
-        .sold-out .buy-btn{background:#444;cursor:not-allowed}
         
-        /* Countdown banner */
-        .countdown-banner{background:var(--gold);color:#000;padding:20px;text-align:center;font-size:28px;font-weight:900;animation:flash 3s infinite}
-        @keyframes flash{0%,100%{background:var(--gold)}50%{background:#ffb800}}
+        .custom-order{background:#111;padding:140px 20px;text-align:center;font-size:32px;line-height:2}
+
         
-        /* Reviews slider */
-        .reviews-slider{background:#111;padding:100px 20px;overflow:hidden;position:relative}
-        .reviews-track{white-space:nowrap;animation:scroll 40s linear infinite;display:inline-block}
-        .review{width:400px;display:inline-block;margin:0 30px;background:var(--darker);padding:30px;border-radius:16px;border:2px solid var(--gray);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-        .review p{font-size:20px;line-height:1.8;margin-bottom:20px;color:#ddd}
-        .review-author{color:var(--gold);font-weight:700;font-size:18px}
-        @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        footer{text-align:center;padding:80px 20px 40px;background:#000;}
+        footer img{width:80px;opacity:0.7;margin-bottom:15px}
         
-        /* Custom order */
-        .custom-order{background:#111;padding:140px 20px;text-align:center;font-size:32px;line-height:2;max-width:1200px;margin:0 auto}
-        .custom-order .highlight{color:var(--gold);font-size:40px;text-shadow:0 0 30px var(--gold);font-family:'Creepster'}
-        
-        /* Footer */
-        footer{text-align:center;padding:80px 20px 40px;background:var(--dark)}
-        footer img{width:70px;opacity:0.7;margin-bottom:15px}
-        footer p{font-size:14px;color:#555}
-        
-        /* Desktop button */
-        #desktopViewBtn{position:fixed;bottom:30px;right:30px;width:70px;height:70px;background:var(--gold);color:#000;border:5px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(255,196,57,0.8);cursor:pointer;z-index:99999;font-size:36px;font-weight:900;animation:pulse 2s infinite;transition:all .3s}
-        #desktopViewBtn:hover{transform:scale(1.15);background:#fff}
+        #desktopViewBtn{position:fixed;bottom:30px;right:30px;width:70px;height:70px;background:var(--gold);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(255,196,57,0.8);cursor:pointer;z-index:99999;border:5px solid #000;transition:all .3s;animation:pulse 2s infinite;font-size:40px;font-weight:900}
+        #desktopViewBtn:hover{transform:scale(1.15)}
         #desktopViewBtn.active{background:#00ff00}
         
-        /* Modale */
         .modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center}
-        .modal-content{background:var(--darker);padding:50px 40px;width:90%;max-width:520px;border:3px solid var(--gray);text-align:center;border-radius:16px;animation:pop .4s}
-        @keyframes pop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
+        .modal-content{background:#111;padding:50px 40px;width:90%;max-width:520px;border:3px solid var(--gold);text-align:center;border-radius:16px;animation:pop .4s}
         .close{position:absolute;top:15px;right:20px;font-size:40px;cursor:pointer;color:#fff}
-        #buyerEmail{width:100%;padding:18px;margin:25px 0 15px;border-radius:12px;border:3px solid var(--gray);background:var(--dark);color:#fff;font-size:19px}
-        #continueBtn{padding:18px;background:var(--gold);color:#000;font-weight:bold;font-size:22px;border:none;border-radius:12px;cursor:pointer;width:90%;margin:15px auto;transition:.3s}
+        #buyerEmail{width:100%;padding:18px;margin:25px 0 15px;border-radius:12px;border:3px solid var(--gray);background:#000;color:#fff;font-size:19px}
+        #continueBtn{padding:18px;background:var(--gold);color:#000;font-weight:bold;font-size:22px;border:none;border-radius:12px;cursor:pointer;width:90%;margin:15px auto}
         #continueBtn:hover{background:#ffb800}
         .duck-big{font-size:120px;animation:float 3s ease-in-out infinite}
-        
-        /* Desktop mode */
-        body.desktop-mode .why-us,body.desktop-mode .features,body.desktop-mode .keys-grid,body.desktop-mode .search-container,body.desktop-mode header,body.desktop-mode .custom-order,body.desktop-mode footer,body.desktop-mode .reviews-slider{max-width:none !important;padding-left:20px !important;padding-right:20px !important;width:100% !important}
-        body.desktop-mode .features{grid-template-columns:1fr 1fr 1fr !important;gap:50px !important}
-        @media (max-width:1400px){body.desktop-mode .features{grid-template-columns:1fr 1fr !important}}
-        @media (max-width:900px){body.desktop-mode .features{grid-template-columns:1fr !important}}
+        @keyframes pop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
     </style>
 </head>
 <body>
     <div class="badge-live">LIVE • 24/7 ONLINE • KWAK!</div>
     <div class="top-bar">
-        <span>🔥 PROMOCJA DNIA: GTA V – 48 ZŁ • RDR2 – 55 ZŁ • TEKKEN 8 – 92 ZŁ</span> • PONAD 250 SPRZEDANYCH KLUCZY • NATYCHMIASTOWA DOSTAWA • 100% BEZPIECZEŃSTWO
+        <span>🔥 PROMOCJA DNIA: GTA V – 48 ZŁ • RDR2 – 55 ZŁ • TEKKEN 8 – 92 ZŁ</span> • PONAD 250 SPRZEDANYCH KLUCZY • NATYCHMIASTOWA DOSTAWA
     </div>
 
     <div class="countdown-banner">
-        ⚡ WEEKENDOWA PROMKA KOŃCZY SIĘ ZA: <span id="countdown">23:59:59</span> ⚡
+        ⚡ WEEKENDOWA PROMKA KOŃCZY SIĘ ZA: <span id="countdown">23:59:59</span> ⚡ ZAMÓW TERAZ!
     </div>
 
     <header>
@@ -126,81 +111,51 @@
         <div class="subtitle">TANIEJ NIŻ G2A • SZYBCIEJ NIŻ INSTANT • BEZ ŚCIEMY</div>
     </header>
 
-    <!-- DLACZEGO KACZOR? -->
     <section class="why-us">
-        <h2>DLACZEGO WSZYSCY KUPUJĄ U KACZORA?</h2>
+        <h2>ZLACZEGO WSZYSCY KUPUJĄ U KACZORA?</h2>
         <div class="features">
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>KLUCZ W 10–60 MINUT</h3>
-                <p>Nawet o 4:20 w nocy. Jak nie wyślę – możesz mnie nazwać pingwinem i wrzucić na TikToka.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🤑</div>
-                <h3>NAJTAŃSZE W POLSCE</h3>
-                <p>Porównaj z G2A, Eneba, Instant – zawsze taniej. Jak znajdziesz taniej – dopłacę różnicę w piórach.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🛡️</div>
-                <h3>100% BEZPIECZEŃSTWO</h3>
-                <p>Ręcznie sprawdzane klucze. Zero scamów. Jak coś nie działa – zwrot w 3 minuty.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🤝</div>
-                <h3>JESTEM ZAWSZE</h3>
-                <p>Pisz o 3 w nocy czy w Wigilię – odpiszę szybciej niż twoja ex na „hej”. Żywy kaczor, nie bot.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>ZERO RYZYKA</h3>
-                <p>Pełny zwrot jak coś nie gra. Klucze prosto od dystrybutorów – zero wirusów.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🎁</div>
-                <h3>BONUSY DLA STAŁYCH</h3>
-                <p>Więcej kupujesz = więcej dostajesz. Gratisowe klucze, zniżki, traktuję jak rodzinę.</p>
-            </div>
+            <div class="feature"><div class="feature-icon">⚡</div><h3>KLUCZ W 10–60 MINUT</h3><p>Nawet o 4:20 w nocy. Jak nie wyślę – możesz mnie nazwać pingwinem i wrzucić na TikToka.</p></div>
+            <div class="feature"><div class="feature-icon">🤑</div><h3>NAJTAŃSZE W POLSCE</h3><p>Porównaj z G2A, Eneba, Instant – zawsze taniej. Jak znajdziesz taniej – dopłacę różnicę w piórach.</p></div>
+            <div class="feature"><div class="feature-icon">🛡️</div><h3>100% BEZPIECZEŃSTWO</h3><p>Ręcznie sprawdzane klucze. Zero scamów. Jak coś nie działa – zwrot w 3 minuty.</p></div>
+            <div class="feature"><div class="feature-icon">🤝</div><h3>JESTEM ZAWSZE</h3><p>Pisz o 3 w nocy czy w Wigilię – odpiszę szybciej niż twoja ex na „hej”. Żywy kaczor, nie bot.</p></div>
+            <div class="feature"><div class="feature-icon">✅</div><h3>100% DZIAŁAJĄCE KLUCZE</h3><p>Jak klucz nie działa – możesz mnie ogolić na łyso. Nigdy się to nie zdarzyło i nie zdarzy.</p></div>
+            <div class="feature"><div class="feature-icon">🎁</div><h3>BONUSY OD KACZORA</h3><p>Więcej kupujesz = więcej dostajesz. Gratisowe klucze, większe zniżki, traktuję stałych jak rodzinę.</p></div>
         </div>
     </section>
 
-    <!-- OPINIE -->
     <section class="reviews-slider">
-        <div class="reviews-track">
+        <div class="review-track">
             <div class="review"><p>"Kaczor to król. Klucz na maila w 8 minut. GTA V za 48 zł – szacun!"</p><div class="review-author">— Krystian</div></div>
             <div class="review"><p>"Najlepszy sprzedawca w PL. 5 raz kupuję, zawsze działa. POLECAM!"</p><div class="review-author">— Seba_z_Wawy</div></div>
             <div class="review"><p>"Kupowałem RDR2 o 3 w nocy – klucz przyszedł w 12 minut. Kaczor legend."</p><div class="review-author">— Marcin</div></div>
             <div class="review"><p>"Taniej niż na wyprzedażach Steam. I jeszcze bonusik dorzucił. 10/10"</p><div class="review-author">— Kuba</div></div>
-            <div class="review"><p>"Batman Trilogy za 24 zł – działa perfekt. Szybka dostawa, zero problemów."</p><div class="review-author">— Patryk</div></div>
-            <div class="review"><p>"Tekken 8 w 15 minut. Najtańszy w necie. Kaczor > G2A"</p><div class="review-author">— Dawid</div></div>
-            <!-- Duplikaty dla seamless loop -->
+            <div class="review"><p>"Szybko, tanio, bez ściemy. Już nigdy nie wracam na G2A!"</p><div class="review-author">— Patryk</div></div>
+            <div class="review"><p>"Kaczor uratował mi weekend. Klucz w 15 min, działa idealnie!"</p><div class="review-author">— Bartek</div></div>
             <div class="review"><p>"Kaczor to król. Klucz na maila w 8 minut. GTA V za 48 zł – szacun!"</p><div class="review-author">— Krystian</div></div>
             <div class="review"><p>"Najlepszy sprzedawca w PL. 5 raz kupuję, zawsze działa. POLECAM!"</p><div class="review-author">— Seba_z_Wawy</div></div>
         </div>
     </section>
 
-    <!-- WYSZUKIWARKA + GRY -->
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="🔥 Szukaj gry... (np. gta, rdr2, mafia, batman, tekken, stalker)" autocomplete="off">
     </div>
 
     <div class="keys-grid" id="gamesContainer"></div>
 
-    <!-- CUSTOM ORDER -->
     <div class="custom-order">
-        Nie ma gry, której szukasz?<br><br>
-        <span class="highlight">ROBIĘ WSZYSTKO NA ZAMÓWIENIE – TYLKO STEAM & ROCKSTAR!</span><br><br><br>
-        <strong>Dowolna gra • Dowolna edycja • Global / EU – zawsze działa</strong><br><br>
-        <span style="font-size:36px; color:var(--gold);">Cenę dogadamy indywidualnie – zawsze najtaniej w Polsce</span><br><br><br>
-        Pisz śmiało 24/7 – odpisuję w kilka minut:<br><br>
-        <span style="color:var(--gold);font-weight:900;">kacze.klucze@gmail.com</span> | Discord: <span style="color:var(--gold);font-weight:900;">mc.duck_8237</span>
+        <div style="font-size:60px;color:var(--gold);text-shadow:0 0 30px var(--gold);font-family:'Creepster'">NIE MA GRY? ZROBIĘ NA ZAMÓWIENIE!</div><br><br>
+        <strong>Dowolna gra • Dowolna edycja • Global / EU • Zawsze najtaniej w Polsce</strong><br><br>
+        <div style="font-size:40px;color:var(--gold)">Cenę dogadamy indywidualnie – zawsze biję G2A i Instant!</div><br><br>
+        <div style="font-size:40px;color:var(--gold)">Pisz 24/7 – odpisuję w kilka minut:</div><br>
+        <div style="font-size:36px;color:var(--gold);font-weight:900">kacze.klucze@gmail.com</div>
+        <div style="font-size:36px;color:var(--gold);font-weight:900">Discord: mc.duck_8237</div>
     </div>
 
     <footer>
         <img src="logo.png" alt="KACZE KLUCZE">
-        <p>KACZE KLUCZE © 2025 • KWAK KWAK MOTHERFUCKER</p>
+        <p style="font-size:13px;color:#555;">KACZE KLUCZE © 2025 • KWAK KWAK MOTHERFUCKER</p>
     </footer>
 
-    <!-- PRZYCISK PC -->
     <div id="desktopViewBtn" title="Kliknij → widok jak na PC">🖥️</div>
 
     <!-- MODALE -->
@@ -239,8 +194,8 @@ const gamesDatabase = [
     {file:"Sid_Meiers_Civilization_VI",title:"Sid Meier's Civilization VI",price:13},
     {file:"Batman_Arkham_Origins",title:"Batman: Arkham Origins",price:15},
     {file:"Fallout_76",title:"Fallout 76",price:42},
-    {file:"Ghost_of_Tsushima_Directors_Cut",title:"Ghost of Tsushima | Director's Cut",price:117},
-    {file:"Ready_or_Not",title:"Ready or Not",price:98},
+    {file:"Ghost_of_Tsushima_Directors_Cut",title:"Ghost of Tsushima | Director's Cut",price:117,new:true},
+    {file:"Ready_or_Not",title:"Ready or Not",price:98,new:true},
     {file:"Hogwarts_Legacy_Deluxe_Edition",title:"Hogwarts Legacy | Deluxe Edition",price:50},
     {file:"Mortal_Kombat_XL",title:"Mortal Kombat XL",price:15},
     {file:"Hello_Neighbor",title:"Hello Neighbor",price:20},
@@ -256,7 +211,7 @@ const gamesDatabase = [
     {file:"Days_Gone",title:"Days Gone",price:69},
     {file:"DOOM",title:"DOOM (2016)",price:20},
     {file:"Tekken_7",title:"TEKKEN 7",price:30},
-    {file:"Tekken_8",title:"TEKKEN 8",price:92},
+    {file:"Tekken_8",title:"TEKKEN 8",price:92,new:true},
     {file:"Back_4_Blood",title:"Back 4 Blood",price:14},
     {file:"Hellblade_Senuas_Sacrifice",title:"Hellblade: Senua's Sacrifice",price:25},
     {file:"Metro_Exodus_Gold",title:"Metro Exodus Gold Edition",price:28},
@@ -265,16 +220,14 @@ const gamesDatabase = [
     {file:"Hunt_Showdown",title:"Hunt: Showdown",price:62},
     {file:"God_of_War",title:"God of War (2022)",price:69},
     {file:"SpiderMan_Miles_Morales",title:"Marvel's Spider-Man: Miles Morales",price:69},
-    {file:"Stalker_2",title:"S.T.A.L.K.E.R. 2: Heart of Chornobyl",price:127},
-    {file:"Horizon_Forbidden_West_Complete",title:"Horizon Forbidden West Complete Edition",price:128},
+    {file:"Stalker_2",title:"S.T.A.L.K.E.R. 2: Heart of Chornobyl",price:127,new:true},
+    {file:"Horizon_Forbidden_West_Complete",title:"Horizon Forbidden West Complete Edition",price:128,new:true},
     {file:"Amanda_The_Adventurer",title:"Amanda the Adventurer",price:10},
     {file:"Bendy_And_The_Ink_Machine",title:"Bendy and the Ink Machine",price:10},
     {file:"LEGO_Batman_Trilogy",title:"LEGO Batman Trilogy",price:20},
     {file:"Carrion",title:"Carrion",price:21},
     {file:"Predator_Hunting_Grounds",title:"Predator: Hunting Grounds",price:35}
 ];
-// Oznacz ostatnie 10 jako nowości
-gamesDatabase.slice(-10).forEach(g => g.new = true);
 
 let allCards = [];
 const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1443015742671814786/xM7ys5Mz02jnKw6yPkkWXob4KuzniGSgwr_do3i-6Dw6QIbjDR6j_HzAb0kUXgHQJrh0";
@@ -334,7 +287,7 @@ function createCard(game){
     card.className = 'key-card';
     card.dataset.title = game.title.toLowerCase();
    
-    const coverDiv = document.createElement('div');
+    const coverDiv = = document.createElement('div');
     coverDiv.className = 'game-cover';
     if (game.new) coverDiv.classList.add('new');
    
@@ -384,19 +337,19 @@ btn.addEventListener('click', function() {
         document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1280');
         document.body.classList.add('desktop-mode');
         btn.classList.add('active');
-        btn.textContent = 'PC';
+        btn.innerHTML = 'PC';
     } else {
         document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1');
         document.body.classList.remove('desktop-mode');
         btn.classList.remove('active');
-        btn.textContent = '🖥️';
+        btn.innerHTML = '🖥️';
     }
     isDesktop = !isDesktop;
 });
 
 // Licznik promocji
 function startCountdown(){
-    let time = 23*3600 + 59*60 + 59; // Start od ~24h, ale dostosuj
+    let time = 23*3600 + 59*60 + 59;
     setInterval(() => {
         if (time > 0) time--;
         let h = Math.floor(time/3600).toString().padStart(2,'0');
@@ -407,13 +360,10 @@ function startCountdown(){
 }
 startCountdown();
 
-// Duplikuj reviews dla loop (już w HTML, ale JS na pause on hover jeśli chcesz)
-document.querySelector('.reviews-slider').addEventListener('mouseenter', () => {
-    document.querySelector('.reviews-track').style.animationPlayState = 'paused';
-});
-document.querySelector('.reviews-slider').addEventListener('mouseleave', () => {
-    document.querySelector('.reviews-track').style.animationPlayState = 'running';
-});
+// Dźwięk KWAK przy otwarciu strony (opcjonalnie, możesz wyłączyć)
+// const kwak = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+// kwak.play().catch(() => {});
+
 </script>
 </body>
 </html>
