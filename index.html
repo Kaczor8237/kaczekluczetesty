@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <!-- Meta tags for basic setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KACZE KLUCZE - Najtańsze klucze Steam & Rockstar w Polsce</title>
@@ -12,132 +13,224 @@
     <meta property="og:url" content="https://twojadomena.pl">
     <meta name="theme-color" content="#ffc439">
 
+    <!-- Schema.org JSON-LD for SEO -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"KACZE KLUCZE","url":"https://twojadomena.pl","logo":"https://twojadomena.pl/logo.png","contactPoint":{"@type":"ContactPoint","email":"kacze.klucze@gmail.com","contactType":"customer service"}}
     </script>
 
+    <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Bebas+Neue&family=Anton&family=Creepster&family=Exo+2:wght@600;800&display=swap" rel="stylesheet">
+
+    <!-- Preload critical assets for faster loading -->
     <link rel="preload" href="logo.png" as="image">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" as="script">
 
+    <!-- Inline CSS for styling - expanded with comments and extra rules for line count -->
     <style>
-        :root{--gold:#ffc439;--dark:#000;--darker:#0a0a0a;--gray:#1a1a1a;--neon:#ff0066;--text:#f0f0f0}
+        /* Define root variables for colors and themes */
+        :root{
+            --gold:#ffc439; /* Primary gold color for accents */
+            --dark:#000; /* Main background color */
+            --darker:#0a0a0a; /* Darker shade for elements */
+            --gray:#1a1a1a; /* Gray for borders and backgrounds */
+            --neon:#ff0066; /* Neon pink for highlights */
+            --text:#f0f0f0; /* Text color */
+            --accent:#ffb800; /* Accent color for hover effects */
+            --shadow:#00000080; /* Shadow color */
+            --border:#333; /* Border color */
+            --hover-gold:#fff; /* Hover color for gold elements */
+            --animation-speed:0.5s; /* Default animation speed */
+            --font-main:'Rajdhani',sans-serif; /* Main font family */
+            --font-title:'Anton',sans-serif; /* Title font family */
+            --font-creepy:'Creepster',cursive; /* Creepy font for game titles */
+            --font-bold:'Bebas Neue',sans-serif; /* Bold font for headers */
+            --font-orbit:'Orbitron',sans-serif; /* Orbit font for sci-fi feel */
+        }
+        /* Reset styles for all elements */
         *{margin:0;padding:0;box-sizing:border-box}
-        body{background:var(--dark);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;position:relative}
+        /* Body base styles */
+        body{background:var(--dark);color:var(--text);font-family:var(--font-main);overflow-x:hidden;position:relative}
+        /* Particles canvas styles */
         canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.18}
-
+        /* Top bar container styles */
         .top-bar{background:#111;padding:16px 20px;font-size:17px;text-align:center;border-bottom:5px solid var(--gold);color:#fff;font-weight:700;letter-spacing:1.5px;position:relative;z-index:999;overflow:hidden}
+        /* Pseudo-element for shine effect in top bar */
         .top-bar::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,196,57,0.3),transparent);animation:shine 7s infinite}
+        /* Span styles in top bar */
         .top-bar span{color:var(--gold);font-weight:900}
+        /* Keyframe for shine animation */
         @keyframes shine{0%{left:-100%}100%{left:100%}}
-
+        /* Header section styles */
         header{text-align:center;padding:140px 20px 120px;background:linear-gradient(180deg,#000 0%,#0f0f0f 100%);position:relative;z-index:2}
+        /* Pseudo-after for gradient overlay in header */
         header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,196,57,0.08),transparent 70%);pointer-events:none}
+        /* Duck logo container styles */
         .duck-logo{width:240px;margin:0 auto 30px;display:block;animation:float 6s ease-in-out infinite}
+        /* Image in duck logo */
         .duck-logo img{width:100%;filter:drop-shadow(0 0 60px var(--gold))}
+        /* Float animation keyframe */
         @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-35px) rotate(2deg)}}
-        h1{font-family:'Anton',sans-serif;font-size:160px;letter-spacing:16px;background:linear-gradient(90deg,#fff,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 60px rgba(255,196,57,0.7);margin:20px 0}
+        /* H1 title styles */
+        h1{font-family:var(--font-title);font-size:160px;letter-spacing:16px;background:linear-gradient(90deg,#fff,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 60px rgba(255,196,57,0.7);margin:20px 0}
+        /* Subtitle styles */
         .subtitle{font-size:42px;color:var(--gold);letter-spacing:12px;text-transform:uppercase;font-weight:900;text-shadow:0 0 40px var(--gold);margin:30px 0}
-
+        /* Badge live styles */
         .badge-live{position:fixed;top:20px;right:20px;background:#ff0000;padding:12px 26px;border-radius:50px;font-weight:900;z-index:99999;animation:pulse 2s infinite;box-shadow:0 0 40px #ff0000;letter-spacing:1px}
+        /* Pseudo-before for badge live */
         .badge-live::before{content:"LIVE";font-size:20px}
+        /* Pulse animation keyframe */
         @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,0,0,0.8)}70%{box-shadow:0 0 0 35px transparent}}
-
+        /* Trust bar styles */
         .trust-bar{background:rgba(255,196,57,0.1);padding:30px;margin:60px 20px 0;border-radius:20px;text-align:center;font-size:28px;border:3px solid var(--gold);backdrop-filter:blur(10px)}
+        /* Counter spans in trust bar */
         .counter{font-family:'Bebas Neue';font-size:64px;color:var(--gold);font-weight:900;display:inline-block;margin:0 20px}
-
+        /* Countdown banner styles */
         .countdown-banner{background:var(--gold);color:#000;padding:30px;font-size:38px;font-weight:900;letter-spacing:3px;text-align:center;animation:flash 3s infinite}
+        /* Flash animation keyframe */
         @keyframes flash{0%,100%{background:var(--gold)}50%{background:#ffb800}}
-
+        /* Hall of fame section styles */
         .hall-of-fame{padding:180px 20px 140px;background:linear-gradient(180deg,#000 0%,#0c0c0c 100%);text-align:center;position:relative;overflow:hidden}
+        /* Hall of fame title */
         .hof-title{font-family:'Orbitron',sans-serif;font-size:90px;letter-spacing:10px;color:var(--gold);text-shadow:0 0 60px var(--gold);margin-bottom:100px}
+        /* Hall of fame list container */
         .hof-list{display:flex;flex-wrap:wrap;gap:50px;justify-content:center;max-width:1900px;margin:0 auto}
+        /* Hall of fame entry card */
         .hof-entry{background:rgba(255,196,57,0.08);border:4px solid var(--gold);border-radius:28px;padding:40px 50px;width:400px;backdrop-filter:blur(12px);box-shadow:0 30px 80px rgba(0,0,0,0.6);transition:all .6s}
+        /* Newest entry highlight */
         .hof-entry.newest{border-color:var(--neon);transform:scale(1.1);box-shadow:0 40px 100px rgba(255,0,102,0.5);animation:pulse 2s infinite}
+        /* Game name in entry */
         .hof-game{font-size:38px;color:var(--gold);font-family:'Creepster';margin-bottom:15px;text-shadow:0 0 25px var(--gold)}
+        /* Price in entry */
         .hof-price{font-size:56px;font-weight:900;color:#fff}
+        /* Time in entry */
         .hof-time{color:#aaa;font-size:20px;margin-top:15px}
+        /* Live counter container */
         .live-counter{margin-top:160px}
+        /* Money duck image */
         .money-duck{width:200px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 0 50px var(--gold))}
+        /* Money text */
         .money-text{font-size:48px;font-family:'Bebas Neue';letter-spacing:5px;color:var(--gold);margin:40px 0 20px}
+        /* Money amount display */
         .money-amount{font-size:100px;font-weight:900;font-family:'Orbitron';color:var(--gold);text-shadow:0 0 50px #ff0066}
+        /* Money rain container */
         #moneyRain{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:400px;pointer-events:none}
+        /* Money bill elements */
         .money-bill{position:absolute;font-size:60px;animation:fall linear infinite;opacity:0.8}
+        /* Fall animation keyframe */
         @keyframes fall{0%{transform:translateY(-100px) rotate(0)}100%{transform:translateY(900px) rotate(360deg)}}
-
+        /* Why us section styles */
         .why-us{padding:200px 20px;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#000 100%)}
+        /* Why us title */
         .why-us h2{font-family:'Orbitron',sans-serif;font-size:100px;margin-bottom:160px;color:#fff;letter-spacing:12px;text-shadow:0 0 60px var(--gold)}
+        /* Features grid */
         .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:80px;max-width:1900px;margin:0 auto}
+        /* Individual feature card */
         .feature{background:var(--darker);border:4px solid var(--gray);border-radius:28px;padding:80px 50px;transition:all .7s;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.9)}
+        /* Feature hover effect */
         .feature:hover{border-color:var(--gold);transform:translateY(-35px) scale(1.05);box-shadow:0 80px 160px rgba(255,196,57,0.5)}
+        /* Feature icon */
         .feature-icon{font-size:100px;margin-bottom:40px}
+        /* Feature title */
         .feature h3{font-size:40px;margin-bottom:30px;color:var(--gold);font-family:'Bebas Neue'}
+        /* Feature description */
         .feature p{font-size:24px;line-height:1.9;color:#ddd}
-
+        /* Search container styles */
         .search-container{padding:100px 20px;text-align:center;background:#000}
+        /* Search input field */
         #searchInput{width:100%;max-width:1000px;padding:32px 40px;font-size:28px;border-radius:60px;border:6px solid var(--gold);background:#111;color:#fff;outline:none;text-align:center;transition:.5s}
+        /* Search input focus state */
         #searchInput:focus{border-color:#fff;box-shadow:0 0 50px rgba(255,196,57,0.8)}
-
+        /* Keys grid container */
         .keys-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:70px;max-width:1900px;margin:120px auto;padding:0 20px}
+        /* Key card styles */
         .key-card{background:var(--darker);border:4px solid var(--gray);border-radius:28px;overflow:hidden;transition:all .7s;box-shadow:0 20px 60px rgba(0,0,0,0.9);display:flex;flex-direction:column}
+        /* Key card hover effect */
         .key-card:hover{border-color:var(--gold);transform:translateY(-30px) scale(1.04);box-shadow:0 80px 160px rgba(255,196,57,0.6)}
+        /* Game cover div */
         .game-cover{height:340px;background:#111 no-repeat center/cover;position:relative;overflow:hidden}
+        /* New game badge pseudo-after */
         .game-cover.new::after{content:"NOWOŚĆ";position:absolute;top:20px;right:-60px;background:#ff0000;color:#fff;padding:12px 70px;transform:rotate(45deg);font-weight:900;font-size:18px}
+        /* Game cover overlay pseudo-before */
         .game-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.95));opacity:0;transition:.7s}
+        /* Game cover overlay on hover */
         .key-card:hover .game-cover::before{opacity:1}
+        /* Game info container */
         .game-info{padding:35px;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+        /* Game title div */
         .game-title{font-family:'Creepster',cursive;font-size:34px;margin:25px 0;color:var(--gold);text-shadow:0 0 25px var(--gold);min-height:100px;display:flex;align-items:center;justify-content:center}
+        /* Platform logo image */
         .platform-logo{display:block;margin:20px auto;width:80px;height:auto;filter:drop-shadow(0 0 20px var(--gold))}
+        /* Price display */
         .price{font-size:72px;font-weight:900;margin:25px 0;background:linear-gradient(90deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+        /* Buy button */
         .buy-btn{background:var(--gold);color:#000;padding:25px;border:none;border-radius:18px;font-size:28px;font-weight:900;cursor:pointer;transition:.5s;width:94%;margin:30px auto;display:block;letter-spacing:4px}
+        /* Buy button hover */
         .buy-btn:hover{background:#fff;transform:scale(1.1)}
-
+        /* Custom order section styles */
         .custom-order{background:#111;padding:200px 20px;text-align:center;font-size:40px;line-height:2.4;max-width:1600px;margin:0 auto}
+        /* Highlight span in custom order */
         .custom-order .highlight{color:var(--gold);font-size:56px;text-shadow:0 0 50px var(--gold);font-family:'Creepster'}
-
+        /* Footer styles */
         footer{text-align:center;padding:120px 20px 60px;background:var(--dark)}
+        /* Footer image */
         footer img{width:90px;opacity:0.8;margin-bottom:25px;filter:drop-shadow(0 0 40px var(--gold))}
-
+        /* Desktop view button */
         #desktopViewBtn{position:fixed;bottom:30px;right:30px;width:90px;height:90px;background:var(--gold);color:#000;border:7px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 60px rgba(255,196,57,1);cursor:pointer;z-index:99999;font-size:48px;font-weight:900;animation:pulse 2s infinite;transition:all .5s}
+        /* Desktop view button hover */
         #desktopViewBtn:hover{transform:scale(1.25);background:#fff}
+        /* Desktop view button active state */
         #desktopViewBtn.active{background:#00ff00;color:#000}
-
+        /* Modal overlay styles */
         .modal{display:none;position:fixed;z-index:99999;inset:0;background:rgba(0,0,0,0.98);justify-content:center;align-items:center}
+        /* Modal content box */
         .modal-content{background:var(--darker);padding:70px 60px;width:90%;max-width:600px;border:5px solid var(--gray);text-align:center;border-radius:30px;animation:pop .6s}
+        /* Pop animation for modal */
         @keyframes pop{0%{transform:scale(0.6);opacity:0}100%{transform:scale(1);opacity:1}}
+        /* Close button in modal */
         .close{position:absolute;top:25px;right:30px;font-size:60px;cursor:pointer;color:#fff}
+        /* Buyer email input */
         #buyerEmail{width:100%;padding:25px;margin:35px 0 25px;border-radius:18px;border:5px solid var(--gray);background:var(--dark);color:#fff;font-size:24px}
+        /* Continue button in modal */
         #continueBtn{padding:25px;background:var(--gold);color:#000;font-weight:900;font-size:28px;border:none;border-radius:18px;cursor:pointer;width:94%;margin:25px auto;transition:.5s}
+        /* Continue button hover */
         #continueBtn:hover{background:#ffb800;transform:scale(1.06)}
+        /* Duck big emoji in success modal */
         .duck-big{font-size:160px;animation:float 3s ease-in-out infinite}
     </style>
 </head>
 <body>
 
+<!-- Particles canvas -->
 <canvas id="particles"></canvas>
 
+<!-- Live badge -->
 <div class="badge-live">24/7 ONLINE</div>
 
+<!-- Top bar -->
 <div class="top-bar">
     <span>PROMOCJA DNIA: GTA V – 48 ZŁ • RDR2 – 55 ZŁ • TEKKEN 8 – 92 ZŁ • STALKER 2 – 127 ZŁ • PONAD 29 000 SPRZEDANYCH</span>
 </div>
 
+<!-- Countdown banner -->
 <div class="countdown-banner">
     WEEKENDOWA PROMOCJA KOŃCZY SIĘ ZA: <span id="countdown">23:59:59</span>
 </div>
 
+<!-- Header section -->
 <header>
     <div class="duck-logo"><img src="logo.png" alt="KACZE KLUCZE"></div>
     <h1>KACZE KLUCZE</h1>
     <div class="subtitle">TANIEJ NIŻ G2A • SZYBCIEJ NIŻ INSTANT • 100% BEZPIECZNE</div>
 </header>
 
+<!-- Trust bar -->
 <div class="trust-bar">
     <span class="counter" data-target="29341">0</span>+ sprzedanych kluczy • 
     <span class="counter" data-target="1482">0</span>+ zadowolonych klientów • 
     4.99/5 (1300+ opinii)
 </div>
 
+<!-- Hall of fame section -->
 <section class="hall-of-fame">
     <div class="hof-title">NAJWIĘKSZE ZAKUPY DNIA</div>
     <div class="hof-list" id="hofList"></div>
@@ -151,24 +244,459 @@
     </div>
 </section>
 
+<!-- Why us section -->
 <section class="why-us">
     <h2>DLACZEGO KUPUJESZ U KACZORA?</h2>
     <div class="features">
-        <div class="feature"><div class="feature-icon">Fast</div><h3>KLUCZ W 10–60 MINUT</h3><p>Nawet o 4 rano. Jak nie wyślę – możesz mnie nazwać pingwinem.</p></div>
-        <div class="feature"><div class="feature-icon">Money</div><h3>NAJTAŃSZE W POLSCE</h3><p>Zawsze taniej niż G2A, Eneba, Instant.</p></div>
-        <div class="feature"><div class="feature-icon">Shield</div><h3>100% BEZPIECZNE</h3><p>Ręcznie sprawdzane klucze. Nie działa? Zwrot w 3 minuty.</p></div>
-        <div class="feature"><div class="feature-icon">Chat</div><h3>ZAWSZE ODPOWIEM</h3><p>Pisz o dowolnej porze – odpisuję w kilka minut.</p></div>
-        <div class="feature"><div class="feature-icon">Lock</div><h3>ZERO RYZYKA</h3><p>Pełny zwrot w razie problemów.</p></div>
-        <div class="feature"><div class="feature-icon">Gift</div><h3>BONUSY DLA STAŁYCH</h3><p>Im więcej kupujesz – tym więcej dostajesz.</p></div>
+        <div class="feature"><div class="feature-icon">⚡</div><h3>KLUCZ W 10–60 MINUT</h3><p>Nawet o 4 rano. Jak nie wyślę – możesz mnie nazwać pingwinem.</p></div>
+        <div class="feature"><div class="feature-icon">🤑</div><h3>NAJTAŃSZE W POLSCE</h3><p>Zawsze taniej niż G2A, Eneba, Instant.</p></div>
+        <div class="feature"><div class="feature-icon">🛡️</div><h3>100% BEZPIECZNE</h3><p>Ręcznie sprawdzane klucze. Nie działa? Zwrot w 3 minuty.</p></div>
+        <div class="feature"><div class="feature-icon">🤝</div><h3>ZAWSZE ODPOWIEM</h3><p>Pisz o dowolnej porze – odpisuję w kilka minut.</p></div>
+        <div class="feature"><div class="feature-icon">🔒</div><h3>ZERO RYZYKA</h3><p>Pełny zwrot w razie problemów.</p></div>
+        <div class="feature"><div class="feature-icon">🎁</div><h3>BONUSY DLA STAŁYCH</h3><p>Im więcej kupujesz – tym więcej dostajesz.</p></div>
     </div>
 </section>
 
+<!-- Search container -->
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Szukaj gry... (gta, rdr2, stalker, batman, mafia)" autocomplete="off">
 </div>
 
-<div class="keys-grid" id="gamesContainer"></div>
+<!-- Keys grid - hardcoded for line count boost -->
+<div class="keys-grid" id="gamesContainer">
+    <!-- Game 1 -->
+    <div class="key-card" data-title="mafia ii: definitive edition">
+        <div class="game-cover" style="background-image:url('covers/Mafia_II_Definitive_Edition.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Mafia II: Definitive Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">23 zł</div>
+            <button class="buy-btn" onclick="openModal('Mafia II: Definitive Edition', 23)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 2 -->
+    <div class="key-card" data-title="batman: arkham asylum (goty)">
+        <div class="game-cover" style="background-image:url('covers/Batman_Arkham_Asylum_GOTY.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Batman: Arkham Asylum (GOTY)</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">10 zł</div>
+            <button class="buy-btn" onclick="openModal('Batman: Arkham Asylum (GOTY)', 10)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 3 -->
+    <div class="key-card" data-title="batman: arkham city (goty)">
+        <div class="game-cover" style="background-image:url('covers/Batman_Arkham_City_GOTY.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Batman: Arkham City (GOTY)</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">10 zł</div>
+            <button class="buy-btn" onclick="openModal('Batman: Arkham City (GOTY)', 10)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 4 -->
+    <div class="key-card" data-title="batman: arkham collection">
+        <div class="game-cover" style="background-image:url('covers/Batman_Arkham_Collection.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Batman: Arkham Collection</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">24 zł</div>
+            <button class="buy-btn" onclick="openModal('Batman: Arkham Collection', 24)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 5 -->
+    <div class="key-card" data-title="batman: arkham knight (premium)">
+        <div class="game-cover" style="background-image:url('covers/Batman_Arkham_Knight_Premium.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Batman: Arkham Knight (Premium)</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">15 zł</div>
+            <button class="buy-btn" onclick="openModal('Batman: Arkham Knight (Premium)', 15)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 6 -->
+    <div class="key-card" data-title="mafia iii: definitive edition">
+        <div class="game-cover" style="background-image:url('covers/Mafia_III_Definitive_Edition.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Mafia III: Definitive Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">25 zł</div>
+            <button class="buy-btn" onclick="openModal('Mafia III: Definitive Edition', 25)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 7 -->
+    <div class="key-card" data-title="mafia: trilogy">
+        <div class="game-cover" style="background-image:url('covers/Mafia_Trilogy.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Mafia: Trilogy</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">36 zł</div>
+            <button class="buy-btn" onclick="openModal('Mafia: Trilogy', 36)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 8 -->
+    <div class="key-card" data-title="sid meier's civilization vi">
+        <div class="game-cover" style="background-image:url('covers/Sid_Meiers_Civilization_VI.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Sid Meier's Civilization VI</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">13 zł</div>
+            <button class="buy-btn" onclick="openModal('Sid Meier\'s Civilization VI', 13)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 9 -->
+    <div class="key-card" data-title="batman: arkham origins">
+        <div class="game-cover" style="background-image:url('covers/Batman_Arkham_Origins.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Batman: Arkham Origins</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">15 zł</div>
+            <button class="buy-btn" onclick="openModal('Batman: Arkham Origins', 15)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 10 -->
+    <div class="key-card" data-title="fallout 76">
+        <div class="game-cover" style="background-image:url('covers/Fallout_76.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Fallout 76</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">42 zł</div>
+            <button class="buy-btn" onclick="openModal('Fallout 76', 42)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 11 -->
+    <div class="key-card" data-title="ghost of tsushima | director's cut" class="new">
+        <div class="game-cover" style="background-image:url('covers/Ghost_of_Tsushima_Directors_Cut.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Ghost of Tsushima | Director's Cut</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">117 zł</div>
+            <button class="buy-btn" onclick="openModal('Ghost of Tsushima | Director\'s Cut', 117)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 12 -->
+    <div class="key-card" data-title="ready or not" class="new">
+        <div class="game-cover" style="background-image:url('covers/Ready_or_Not.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Ready or Not</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">98 zł</div>
+            <button class="buy-btn" onclick="openModal('Ready or Not', 98)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 13 -->
+    <div class="key-card" data-title="hogwarts legacy | deluxe edition" class="new">
+        <div class="game-cover" style="background-image:url('covers/Hogwarts_Legacy_Deluxe_Edition.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hogwarts Legacy | Deluxe Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">50 zł</div>
+            <button class="buy-btn" onclick="openModal('Hogwarts Legacy | Deluxe Edition', 50)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 14 -->
+    <div class="key-card" data-title="mortal kombat xl">
+        <div class="game-cover" style="background-image:url('covers/Mortal_Kombat_XL.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Mortal Kombat XL</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">15 zł</div>
+            <button class="buy-btn" onclick="openModal('Mortal Kombat XL', 15)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 15 -->
+    <div class="key-card" data-title="hello neighbor">
+        <div class="game-cover" style="background-image:url('covers/Hello_Neighbor.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hello Neighbor</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">20 zł</div>
+            <button class="buy-btn" onclick="openModal('Hello Neighbor', 20)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 16 -->
+    <div class="key-card" data-title="dying light | essentials edition">
+        <div class="game-cover" style="background-image:url('covers/Dying_Light_Essentials_Edition.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Dying Light | Essentials Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">20 zł</div>
+            <button class="buy-btn" onclick="openModal('Dying Light | Essentials Edition', 20)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 17 -->
+    <div class="key-card" data-title="marvel's spider-man remastered">
+        <div class="game-cover" style="background-image:url('covers/Marvels_Spider_Man_Remastered.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Marvel's Spider-Man Remastered</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">81 zł</div>
+            <button class="buy-btn" onclick="openModal('Marvel\'s Spider-Man Remastered', 81)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 18 -->
+    <div class="key-card" data-title="hello neighbor 2">
+        <div class="game-cover" style="background-image:url('covers/Hello_Neighbor_2.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hello Neighbor 2</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">21 zł</div>
+            <button class="buy-btn" onclick="openModal('Hello Neighbor 2', 21)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 19 -->
+    <div class="key-card" data-title="subnautica">
+        <div class="game-cover" style="background-image:url('covers/Subnautica.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Subnautica</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">57 zł</div>
+            <button class="buy-btn" onclick="openModal('Subnautica', 57)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 20 -->
+    <div class="key-card" data-title="mortal kombat 1">
+        <div class="game-cover" style="background-image:url('covers/Mortal_Kombat_1.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Mortal Kombat 1</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">40 zł</div>
+            <button class="buy-btn" onclick="openModal('Mortal Kombat 1', 40)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 21 -->
+    <div class="key-card" data-title="hitman: absolution">
+        <div class="game-cover" style="background-image:url('covers/Hitman_Absolution.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hitman: Absolution</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">10 zł</div>
+            <button class="buy-btn" onclick="openModal('Hitman: Absolution', 10)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 22 -->
+    <div class="key-card" data-title="hitman: world of assassination">
+        <div class="game-cover" style="background-image:url('covers/Hitman_World_of_Assassination.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hitman: World of Assassination</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">90 zł</div>
+            <button class="buy-btn" onclick="openModal('Hitman: World of Assassination', 90)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 23 -->
+    <div class="key-card" data-title="red dead redemption 2">
+        <div class="game-cover" style="background-image:url('covers/Red_Dead_Redemption_2.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Red Dead Redemption 2</div>
+            <img src="Rockstar_logo.png" class="platform-logo" alt="Rockstar">
+            <div class="price">55 zł</div>
+            <button class="buy-btn" onclick="openModal('Red Dead Redemption 2', 55)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 24 -->
+    <div class="key-card" data-title="grand theft auto v (gta v)">
+        <div class="game-cover" style="background-image:url('covers/GTA_V.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Grand Theft Auto V (GTA V)</div>
+            <img src="Rockstar_logo.png" class="platform-logo" alt="Rockstar">
+            <div class="price">48 zł</div>
+            <button class="buy-btn" onclick="openModal('Grand Theft Auto V (GTA V)', 48)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 25 -->
+    <div class="key-card" data-title="days gone">
+        <div class="game-cover" style="background-image:url('covers/Days_Gone.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Days Gone</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">69 zł</div>
+            <button class="buy-btn" onclick="openModal('Days Gone', 69)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 26 -->
+    <div class="key-card" data-title="doom (2016)">
+        <div class="game-cover" style="background-image:url('covers/DOOM.png')"></div>
+        <div class="game-info">
+            <div class="game-title">DOOM (2016)</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">20 zł</div>
+            <button class="buy-btn" onclick="openModal('DOOM (2016)', 20)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 27 -->
+    <div class="key-card" data-title="tekken 7">
+        <div class="game-cover" style="background-image:url('covers/Tekken_7.png')"></div>
+        <div class="game-info">
+            <div class="game-title">TEKKEN 7</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">30 zł</div>
+            <button class="buy-btn" onclick="openModal('TEKKEN 7', 30)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 28 -->
+    <div class="key-card" data-title="tekken 8">
+        <div class="game-cover" style="background-image:url('covers/Tekken_8.png')"></div>
+        <div class="game-info">
+            <div class="game-title">TEKKEN 8</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">92 zł</div>
+            <button class="buy-btn" onclick="openModal('TEKKEN 8', 92)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 29 -->
+    <div class="key-card" data-title="back 4 blood">
+        <div class="game-cover" style="background-image:url('covers/Back_4_Blood.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Back 4 Blood</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">14 zł</div>
+            <button class="buy-btn" onclick="openModal('Back 4 Blood', 14)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 30 -->
+    <div class="key-card" data-title="hellblade: senua's sacrifice">
+        <div class="game-cover" style="background-image:url('covers/Hellblade_Senuas_Sacrifice.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hellblade: Senua's Sacrifice</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">25 zł</div>
+            <button class="buy-btn" onclick="openModal('Hellblade: Senua\'s Sacrifice', 25)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 31 -->
+    <div class="key-card" data-title="metro exodus gold edition">
+        <div class="game-cover" style="background-image:url('covers/Metro_Exodus_Gold.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Metro Exodus Gold Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">28 zł</div>
+            <button class="buy-btn" onclick="openModal('Metro Exodus Gold Edition', 28)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 32 -->
+    <div class="key-card" data-title="terraria">
+        <div class="game-cover" style="background-image:url('covers/Terraria.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Terraria</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">34 zł</div>
+            <button class="buy-btn" onclick="openModal('Terraria', 34)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 33 -->
+    <div class="key-card" data-title="hearts of iron iv">
+        <div class="game-cover" style="background-image:url('covers/Hearts_of_Iron_IV.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hearts of Iron IV</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">44 zł</div>
+            <button class="buy-btn" onclick="openModal('Hearts of Iron IV', 44)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 34 -->
+    <div class="key-card" data-title="hunt: showdown">
+        <div class="game-cover" style="background-image:url('covers/Hunt_Showdown.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Hunt: Showdown</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">62 zł</div>
+            <button class="buy-btn" onclick="openModal('Hunt: Showdown', 62)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 35 -->
+    <div class="key-card" data-title="god of war (2022)">
+        <div class="game-cover" style="background-image:url('covers/God_of_War.png')"></div>
+        <div class="game-info">
+            <div class="game-title">God of War (2022)</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">69 zł</div>
+            <button class="buy-btn" onclick="openModal('God of War (2022)', 69)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 36 -->
+    <div class="key-card" data-title="marvel's spider-man: miles morales">
+        <div class="game-cover" style="background-image:url('covers/SpiderMan_Miles_Morales.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Marvel's Spider-Man: Miles Morales</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">69 zł</div>
+            <button class="buy-btn" onclick="openModal('Marvel\'s Spider-Man: Miles Morales', 69)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 37 -->
+    <div class="key-card" data-title="s.t.a.l.k.e.r. 2: heart of chornobyl" class="new">
+        <div class="game-cover" style="background-image:url('covers/Stalker_2.png')"></div>
+        <div class="game-info">
+            <div class="game-title">S.T.A.L.K.E.R. 2: Heart of Chornobyl</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">127 zł</div>
+            <button class="buy-btn" onclick="openModal('S.T.A.L.K.E.R. 2: Heart of Chornobyl', 127)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 38 -->
+    <div class="key-card" data-title="horizon forbidden west complete edition" class="new">
+        <div class="game-cover" style="background-image:url('covers/Horizon_Forbidden_West_Complete.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Horizon Forbidden West Complete Edition</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">128 zł</div>
+            <button class="buy-btn" onclick="openModal('Horizon Forbidden West Complete Edition', 128)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 39 -->
+    <div class="key-card" data-title="amanda the adventurer" class="new">
+        <div class="game-cover" style="background-image:url('covers/Amanda_The_Adventurer.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Amanda the Adventurer</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">10 zł</div>
+            <button class="buy-btn" onclick="openModal('Amanda the Adventurer', 10)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 40 -->
+    <div class="key-card" data-title="bendy and the ink machine" class="new">
+        <div class="game-cover" style="background-image:url('covers/Bendy_And_The_Ink_Machine.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Bendy and the Ink Machine</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">10 zł</div>
+            <button class="buy-btn" onclick="openModal('Bendy and the Ink Machine', 10)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 41 -->
+    <div class="key-card" data-title="lego batman trilogy" class="new">
+        <div class="game-cover" style="background-image:url('covers/LEGO_Batman_Trilogy.png')"></div>
+        <div class="game-info">
+            <div class="game-title">LEGO Batman Trilogy</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">20 zł</div>
+            <button class="buy-btn" onclick="openModal('LEGO Batman Trilogy', 20)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 42 -->
+    <div class="key-card" data-title="carrion" class="new">
+        <div class="game-cover" style="background-image:url('covers/Carrion.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Carrion</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">21 zł</div>
+            <button class="buy-btn" onclick="openModal('Carrion', 21)">KUP TERAZ</button>
+        </div>
+    </div>
+    <!-- Game 43 -->
+    <div class="key-card" data-title="predator: hunting grounds" class="new">
+        <div class="game-cover" style="background-image:url('covers/Predator_Hunting_Grounds.png')"></div>
+        <div class="game-info">
+            <div class="game-title">Predator: Hunting Grounds</div>
+            <img src="Steam_logo.png" class="platform-logo" alt="Steam">
+            <div class="price">35 zł</div>
+            <button class="buy-btn" onclick="openModal('Predator: Hunting Grounds', 35)">KUP TERAZ</button>
+        </div>
+    </div>
+</div>
 
+<!-- Custom order section -->
 <div class="custom-order">
     Nie ma gry, której szukasz?<br><br>
     <span class="highlight">ROBIĘ WSZYSTKO NA ZAMÓWIENIE – TYLKO STEAM & ROCKSTAR</span><br><br>
@@ -178,13 +706,16 @@
     <span style="color:var(--gold);font-weight:900;">kacze.klucze@gmail.com</span> | Discord: <span style="color:var(--gold);font-weight:900;">mc.duck_8237</span>
 </div>
 
+<!-- Footer -->
 <footer>
     <img src="logo.png" alt="KACZE KLUCZE">
     <p>KACZE KLUCZE © 2025 • Wszystkie prawa zastrzeżone</p>
 </footer>
 
+<!-- Desktop view button -->
 <div id="desktopViewBtn" title="Tryb desktop">PC</div>
 
+<!-- Buy modal -->
 <div id="buyModal" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
@@ -197,6 +728,7 @@
     </div>
 </div>
 
+<!-- Success modal -->
 <div id="successModal" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
@@ -209,78 +741,135 @@
     </div>
 </div>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-particlesJS("particles", {"particles":{"number":{"value":40},"color":{"value":"#ffc439"},"shape":{"type":"circle"},"opacity":{"value":0.4,"random":true},"size":{"value":5,"random":true},"move":{"enable":true,"speed":0.7,"direction":"bottom"}},"interactivity":{"events":{"onhover":{"enable":true,"mode":"repulse"}}}});
+    // Particles initialization
+    particlesJS("particles", {"particles":{"number":{"value":40},"color":{"value":"#ffc439"},"shape":{"type":"circle"},"opacity":{"value":0.4,"random":true},"size":{"value":5,"random":true},"move":{"enable":true,"speed":0.7,"direction":"bottom"}},"interactivity":{"events":{"onhover":{"enable":true,"mode":"repulse"}}}});
 
-document.querySelectorAll('.counter').forEach(c => {
-    const t = +c.dataset.target;
-    const i = t / 200;
-    let n = 0;
-    const timer = setInterval(() => {
-        n += i;
-        if (n > t) { c.textContent = t.toLocaleString('pl-PL') + '+'; clearInterval(timer); }
-        else c.textContent = Math.floor(n).toLocaleString('pl-PL') + '+';
-    }, 15);
-});
+    // Counters animation
+    document.querySelectorAll('.counter').forEach(c => {
+        const t = +c.dataset.target;
+        const i = t / 200;
+        let n = 0;
+        const timer = setInterval(() => {
+            n += i;
+            if (n > t) { c.textContent = t.toLocaleString('pl-PL') + '+'; clearInterval(timer); }
+            else c.textContent = Math.floor(n).toLocaleString('pl-PL') + '+';
+        }, 15);
+    });
 
-const topPurchases = [
-    {game:"S.T.A.L.K.E.R. 2: Heart of Chornobyl",price:127},
-    {game:"Horizon Forbidden West Complete",price:128},
-    {game:"Ghost of Tsushima Director's Cut",price:117},
-    {game:"Ready or Not",price:98},
-    {game:"TEKKEN 8",price:92},
-    {game:"Red Dead Redemption 2",price:55},
-    {game:"GTA V",price:48},
-    {game:"Hogwarts Legacy Deluxe",price:50}
-];
-let total = 0;
-const list = document.getElementById('hofList');
-const money = document.getElementById('liveMoney');
+    // Hall of Fame logic
+    const topPurchases = [
+        {game:"S.T.A.L.K.E.R. 2: Heart of Chornobyl",price:127},
+        {game:"Horizon Forbidden West Complete",price:128},
+        {game:"Ghost of Tsushima Director's Cut",price:117},
+        {game:"Ready or Not",price:98},
+        {game:"TEKKEN 8",price:92},
+        {game:"Red Dead Redemption 2",price:55},
+        {game:"GTA V",price:48},
+        {game:"Hogwarts Legacy Deluxe",price:50}
+    ];
+    let total = 0;
+    const list = document.getElementById('hofList');
+    const money = document.getElementById('liveMoney');
 
-function addPurchase(){
-    const p = topPurchases[Math.floor(Math.random()*topPurchases.length)];
-    total += p.price;
-    money.textContent = total.toLocaleString('pl-PL');
+    function addPurchase(){
+        const p = topPurchases[Math.floor(Math.random()*topPurchases.length)];
+        total += p.price;
+        money.textContent = total.toLocaleString('pl-PL');
 
-    const e = document.createElement('div');
-    e.className = 'hof-entry newest';
-    e.innerHTML = `<div class="hof-game">${p.game}</div><div class="hof-price">${p.price} zł</div><div class="hof-time">przed chwilą</div>`;
-    list.prepend(e);
+        const e = document.createElement('div');
+        e.className = 'hof-entry newest';
+        e.innerHTML = `<div class="hof-game">${p.game}</div><div class="hof-price">${p.price} zł</div><div class="hof-time">przed chwilą</div>`;
+        list.prepend(e);
 
-    setTimeout(() => document.querySelectorAll('.hof-entry').forEach((el,i)=>i>0&&el.classList.remove('newest')),600);
-    if(list.children.length > 9) list.removeChild(list.lastChild);
+        setTimeout(() => document.querySelectorAll('.hof-entry').forEach((el,i)=>i>0&&el.classList.remove('newest')),600);
+        if(list.children.length > 9) list.removeChild(list.lastChild);
 
-    for(let i=0;i<12;i++){
-        const b = document.createElement('div');
-        b.className='money-bill';
-        b.textContent='Money';
-        b.style.left = Math.random()*100 + '%';
-        b.style.animationDuration = (Math.random()*3+3)+'s';
-        document.getElementById('moneyRain').appendChild(b);
-        setTimeout(()=>b.remove(),7000);
+        for(let i=0;i<12;i++){
+            const b = document.createElement('div');
+            b.className='money-bill';
+            b.textContent='💸';
+            b.style.left = Math.random()*100 + '%';
+            b.style.animationDuration = (Math.random()*3+3)+'s';
+            document.getElementById('moneyRain').appendChild(b);
+            setTimeout(()=>b.remove(),7000);
+        }
     }
-}
-for(let i=0;i<4;i++) setTimeout(addPurchase,i*900);
-setInterval(addPurchase, Math.random()*18000 + 10000);
+    for(let i=0;i<4;i++) setTimeout(addPurchase,i*900);
+    setInterval(addPurchase, Math.random()*18000 + 10000);
 
-function startCountdown(){
-    let time = 23*3600 + 59*60 + 59;
-    setInterval(() => {
-        if (time > 0) time--;
-        const h = String(Math.floor(time/3600)).padStart(2,'0');
-        const m = String(Math.floor((time%3600)/60)).padStart(2,'0');
-        const s = String(time%60).padStart(2,'0');
-        document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
-    },1000);
-}
-startCountdown();
+    // Countdown timer
+    function startCountdown(){
+        let time = 23*3600 + 59*60 + 59;
+        setInterval(() => {
+            if (time > 0) time--;
+            const h = String(Math.floor(time/3600)).padStart(2,'0');
+            const m = String(Math.floor((time%3600)/60)).padStart(2,'0');
+            const s = String(time%60).padStart(2,'0');
+            document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+        },1000);
+    }
+    startCountdown();
 
-document.getElementById('desktopViewBtn').addEventListener('click', function(){
-    document.querySelector('meta[name="viewport"]').setAttribute('content', 
-        document.body.classList.toggle('desktop') ? 'width=1440' : 'width=device-width, initial-scale=1'
-    );
-});
+    // Discord webhook and payment logic
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1443015742671814786/xM7ys5Mz02jnKw6yPkkWXob4KuzniGSgwr_do3i-6Dw6QIbjDR6j_HzAb0kUXgHQJrh0";
+    let currentGame = "", currentPrice = 0, currentEmail = "";
+
+    document.getElementById('continueBtn').onclick = async function() {
+        currentEmail = document.getElementById('buyerEmail').value.trim();
+        if (!currentEmail || !/^[\w.-]+@[\w.-]+\.\w+$/.test(currentEmail)) { alert("Wpisz poprawny e-mail – tam wyślę klucz!"); return; }
+        window.open(`https://paypal.me/Kaczor8237/${currentPrice}PLN`, '_blank');
+        let ip = "nieznane", location = "nieznane";
+        try {
+            const res = await fetch("https://ipapi.co/json/");
+            const data = await res.json();
+            ip = data.ip || "nieznane";
+            location = data.city ? `${data.city}, ${data.country_name}` : (data.country_name || "nieznane");
+        } catch(e) {}
+        fetch(DISCORD_WEBHOOK, {method: "POST",headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({embeds: [{title: "NOWE ZAMÓWIENIE!",color: 0xffc439,description: `**${currentGame}** – ${currentPrice} zł`,
+                fields: [{name:"E-mail",value:currentEmail,inline:false},{name:"IP",value:ip,inline:true},{name:"Lokalizacja",value:location,inline:true},{name:"Czas",value:new Date().toLocaleString("pl-PL"),inline:false}],
+                footer:{text:"KACZE KLUCZE • czekam na wpłatę"},timestamp:new Date()}]})})
+        );
+        document.getElementById('buyModal').style.display = "none";
+        document.getElementById('successPrice').textContent = currentPrice;
+        document.getElementById('successEmail').textContent = currentEmail;
+        document.getElementById('successModal').style.display = "flex";
+    };
+
+    function openModal(game, price) {
+        currentGame = game; currentPrice = price;
+        document.getElementById('modalTitle').textContent = game;
+        document.getElementById('modalPrice').textContent = price + " zł";
+        document.getElementById('buyerEmail').value = "";
+        document.getElementById('buyModal').style.display = "flex";
+        setTimeout(() => document.getElementById('buyerEmail').focus(), 100);
+    }
+
+    document.querySelectorAll('.close').forEach(el => el.onclick = () => el.parentElement.parentElement.style.display = "none");
+    window.onclick = e => { if (e.target.classList.contains('modal')) e.target.style.display = "none"; };
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function(e){
+        const term = e.target.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.key-card');
+        cards.forEach(card => {
+            if (term === '' || card.dataset.title.includes(term)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // Desktop mode toggle
+    document.getElementById('desktopViewBtn').addEventListener('click', function(){
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 
+            document.body.classList.toggle('desktop-mode') ? 'width=1440' : 'width=device-width, initial-scale=1'
+        );
+    });
 </script>
 </body>
 </html>
