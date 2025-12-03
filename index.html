@@ -58,14 +58,35 @@
             opacity:0.06;
             animation:float 25s infinite ease-in-out;
         }
+
+        /* NOWE, PREMIUM LOGO – ŻADNEGO GÓWNA */
         .duck-logo{
-            width:280px;
-            margin-bottom:30px;
-            animation:bounce 4s infinite;
-            filter:drop-shadow(0 0 40px var(--neon));
-            z-index:2;
+            width:340px;
+            max-width:90vw;
+            margin-bottom:40px;
+            animation: logoPulse 5s infinite ease-in-out;
+            filter: 
+                drop-shadow(0 0 30px #ffc439)
+                drop-shadow(0 0 60px #ffc439)
+                drop-shadow(0 0 100px rgba(255,196,57,0.6));
+            transform: translateZ(0);
         }
-        .duck-logo img{width:100%;height:auto}
+        .duck-logo img{
+            width:100%;
+            height:auto;
+            display:block;
+        }
+        @keyframes logoPulse{
+            0%,100%{
+                filter: drop-shadow(0 0 30px #ffc439) drop-shadow(0 0 60px #ffc439) drop-shadow(0 0 100px rgba(255,196,57,0.6));
+                transform:scale(1);
+            }
+            50%{
+                filter: drop-shadow(0 0 50px #ffc439) drop-shadow(0 0 90px #ffc439) drop-shadow(0 0 140px rgba(255,196,57,0.8));
+                transform:scale(1.04);
+            }
+        }
+
         h1{
             font-family:'Monoton',cursive;
             font-size:clamp(80px,15vw,180px);
@@ -84,10 +105,7 @@
             margin-top:20px;
             text-shadow:0 0 30px var(--neon);
         }
-        .why-us{
-            padding:160px 20px;
-            position:relative;
-        }
+        .why-us{padding:160px 20px;position:relative}
         .why-us h2{
             font-family:'Orbitron',sans-serif;
             font-size:70px;
@@ -115,12 +133,9 @@
             overflow:hidden;
         }
         .feature::before{
-            content:'';
-            position:absolute;
-            inset:0;
+            content:'';position:absolute;inset:0;
             background:linear-gradient(135deg,transparent,rgba(255,196,57,0.15));
-            opacity:0;
-            transition:.7s;
+            opacity:0;transition:.7s;
         }
         .feature:hover{
             transform:translateY(-30px) scale(1.06);
@@ -128,22 +143,10 @@
             box-shadow:0 40px 100px rgba(255,196,57,0.5);
         }
         .feature:hover::before{opacity:1}
-        .feature-icon{
-            font-size:90px;
-            margin-bottom:30px;
-            filter:drop-shadow(0 0 20px var(--neon));
-        }
-        .feature h3{
-            font-size:34px;
-            color:var(--neon);
-            margin-bottom:20px;
-        }
-        .search-container{
-            max-width:800px;
-            margin:60px auto;
-            padding:0 20px;
-            text-align:center;
-        }
+        .feature-icon{font-size:90px;margin-bottom:30px;filter:drop-shadow(0 0 20px var(--neon))}
+        .feature h3{font-size:34px;color:var(--neon);margin-bottom:20px}
+
+        .search-container{max-width:800px;margin:60px auto;padding:0 20px;text-align:center}
         #searchInput{
             background:rgba(17,17,17,0.9);
             border:3px solid #333;
@@ -156,13 +159,8 @@
             transition:.5s;
             backdrop-filter:blur(10px);
         }
-        #searchInput:focus{
-            border-color:var(--neon);
-            box-shadow:0 0 50px rgba(255,196,57,0.6);
-            outline:none;
-        }
+        #searchInput:focus{border-color:var(--neon);box-shadow:0 0 50px rgba(255,196,57,0.6);outline:none}
 
-        /* KARTY – TYLKO UNOSZENIE, ZERO OBRACANIA */
         .keys-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
@@ -194,9 +192,7 @@
         }
         .key-card:hover .game-cover{transform:scale(1.18)}
         .game-cover::after{
-            content:'';
-            position:absolute;
-            inset:0;
+            content:'';position:absolute;inset:0;
             background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.95));
         }
         .game-info{
@@ -214,11 +210,7 @@
             color:var(--neon);
             text-shadow:0 0 20px var(--neon-glow);
         }
-        .platform-logo{
-            width:60px;
-            margin:12px auto;
-            filter:drop-shadow(0 0 10px var(--neon));
-        }
+        .platform-logo{width:60px;margin:12px auto;filter:drop-shadow(0 0 10px var(--neon))}
         .price{
             font-size:58px;
             font-weight:900;
@@ -241,11 +233,7 @@
             text-transform:uppercase;
             letter-spacing:2px;
         }
-        .buy-btn:hover{
-            background:#fff;
-            transform:scale(1.1);
-            box-shadow:0 20px 60px rgba(255,255,255,0.5);
-        }
+        .buy-btn:hover{background:#fff;transform:scale(1.1);box-shadow:0 20px 60px rgba(255,255,255,0.5)}
 
         .custom-order{
             background:linear-gradient(135deg,rgba(255,196,57,0.12),transparent);
@@ -255,13 +243,8 @@
             line-height:2;
             color:#ddd;
         }
-        .highlight{
-            color:var(--neon);
-            font-weight:900;
-            text-shadow:0 0 25px var(--neon-glow);
-        }
+        .highlight{color:var(--neon);font-weight:900;text-shadow:0 0 25px var(--neon-glow)}
 
-        /* PREMIUM MODAL */
         .modal{
             display:none;
             position:fixed;
@@ -294,19 +277,8 @@
             transition:.3s;
         }
         .close:hover{transform:scale(1.2)}
-        #modalTitle{
-            font-size:36px;
-            color:var(--neon);
-            margin-bottom:10px;
-            text-shadow:0 0 20px var(--neon-glow);
-        }
-        #modalPrice{
-            font-size:68px;
-            font-weight:900;
-            color:var(--neon);
-            margin:20px 0;
-            text-shadow:0 0 30px var(--neon-glow);
-        }
+        #modalTitle{font-size:36px;color:var(--neon);margin-bottom:10px;text-shadow:0 0 20px var(--neon-glow)}
+        #modalPrice{font-size:68px;font-weight:900;color:var(--neon);margin:20px 0;text-shadow:0 0 30px var(--neon-glow)}
         #buyerEmail{
             width:100%;
             padding:22px 24px;
@@ -318,11 +290,7 @@
             margin:25px 0 20px;
             transition:.4s;
         }
-        #buyerEmail:focus{
-            border-color:var(--neon);
-            box-shadow:0 0 30px rgba(255,196,57,0.5);
-            outline:none;
-        }
+        #buyerEmail:focus{border-color:var(--neon);box-shadow:0 0 30px rgba(255,196,57,0.5);outline:none}
         #continueBtn{
             width:100%;
             background:var(--neon);
@@ -338,11 +306,7 @@
             text-transform:uppercase;
             letter-spacing:2px;
         }
-        #continueBtn:hover{
-            background:#fff;
-            transform:translateY(-4px);
-            box-shadow:0 20px 60px rgba(255,255,255,0.4);
-        }
+        #continueBtn:hover{background:#fff;transform:translateY(-4px);box-shadow:0 20px 60px rgba(255,255,255,0.4)}
         .duck-big{font-size:140px;animation:float 3s infinite;margin-bottom:20px}
 
         #desktopViewBtn{
@@ -368,7 +332,6 @@
 
         @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,196,57,0.9)}70%{box-shadow:0 0 0 25px rgba(255,196,57,0)}}
         @keyframes glitch{0%,100%{text-shadow:0 0 50px var(--neon-glow)}2%{text-shadow:6px 0 #ff0066,-6px 0 #00ffff}4%{text-shadow:-6px 0 #ff0066,6px 0 #00ffff}6%{text-shadow:none}}
-        @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
         @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-40px) rotate(4deg)}}
         @keyframes pop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
 
@@ -455,7 +418,6 @@
         </svg>
     </div>
 
-    <!-- PREMIUM MODAL -->
     <div id="buyModal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
