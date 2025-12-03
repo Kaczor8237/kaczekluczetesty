@@ -500,7 +500,8 @@ function createCard(game){
     });
     setTimeout(() => { if (!found) coverDiv.style.backgroundImage = "url('logo.png')"; }, 3000);
 
-    const logoSrc = game.platform === "rockstar" ? "rockstar.png" : "steam.png";
+    // TWOJE DOKŁADNE NAZWY PLIKÓW
+    const logoSrc = game.platform === "rockstar" ? "Rockstar_Logo.png" : "Steam_logo.png";
 
     card.innerHTML = `
         <div class="game-info">
@@ -538,7 +539,7 @@ btn.addEventListener('click', function() {
         btn.innerHTML = 'PC';
     } else {
         document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1');
-        document.body.classList.remove('desktop-mode');
+        document.body.classList.remove('cellence-mode');
         btn.classList.remove('active');
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`;
     }
